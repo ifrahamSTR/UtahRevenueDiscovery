@@ -301,6 +301,15 @@ img { max-width: 100%; display: block; }
 .region-switch-row { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 0.88rem; color: var(--color-text-muted); }
 .region-switch-row select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-size: 0.88rem; }
 
+/* Data-grounded "which cities are actually in this cluster" chip row, shown
+   right under the region hero paragraph. Same chip visual language as
+   .inspect-chip / .popup-chip elsewhere in this stylesheet. */
+.region-locations { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 14px; }
+.region-locations:empty { margin-top: 0; }
+.region-locations__label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); margin-right: 2px; }
+.location-chip { font-size: 0.78rem; background: var(--surface-tint-strong); color: var(--color-primary); padding: 3px 10px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+.location-chip__n { font-weight: 500; opacity: 0.75; }
+
 /* Ported verbatim (class names + rules) from the Charlotte report's own
    Section 5 STR Regulations card, so every STR Search market report --
    Charlotte, Idaho's ten regions, and whatever comes after -- presents

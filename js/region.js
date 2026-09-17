@@ -62,6 +62,21 @@ function renderRegulatory(reg) {
   host.innerHTML = html;
 }
 
+// Data-grounded answer to "what does this cluster actually cover" -- counts
+// real listing-level city attribution (AirDNA's own city field), not the
+// region's hand-assigned display name. Reuses topCounts() from map.js.
+function renderLocations(regionListings) {
+  const host = document.getElementById("region-locations");
+  if (!host) return;
+  const cities = topCounts(regionListings, (l) => l.city || "Unknown", 8);
+  if (!cities.length) { host.innerHTML = ""; return; }
+  let html = '<span class="region-locations__label">Cities in this footprint:</span>';
+  cities.forEach(([city, n]) => {
+    html += '<span class="location-chip">' + escapeHtml(city) + ' <span class="location-chip__n">' + fmtNumber(n) + "</span></span>";
+  });
+  host.innerHTML = html;
+}
+
 function renderRegionSwitcher(regions, currentSlug) {
   const host = document.getElementById("region-switcher");
   if (!host) return;
@@ -117,6 +132,7 @@ function renderRegionSwitcher(regions, currentSlug) {
       if (mapEl) mapEl.innerHTML = "";
       initMap(regionListings, boundsFor(regionListings, 0.05));
       initFindings(regionListings);
+      renderLocations(regionListings);
       renderRegulatory((regulations || {})[slug]);
       renderRegionSwitcher(regions, slug);
     })
