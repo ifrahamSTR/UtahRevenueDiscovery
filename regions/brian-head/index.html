@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Utah STR Revenue Discovery — Region</title>
+<meta name="description" content="A data-driven Utah STR revenue region: interactive map, findings, and short-term rental regulatory research." />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../css/styles.css?v=20260917-2" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-header__brand">
+      <img class="site-header__logo" src="../../assets/branding/strsearch-logo.webp" alt="STR Search" />
+      <div class="site-header__title">Utah <span>STR Revenue Discovery</span></div>
+    </div>
+    <nav class="site-nav">
+      <a href="../../index.html">&larr; Statewide map</a>
+      <a href="#region-map">Map</a>
+      <a href="#region-findings">Findings</a>
+      <a href="#regulatory">Regulations</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Region hero -->
+  <section id="region-overview" class="section section--hero">
+    <div class="container container--wide">
+      <p class="section-kicker" id="region-kicker">Regional deep dive</p>
+      <h1 id="region-title">Loading region&hellip;</h1>
+      <p class="hero-sub" id="region-sub"></p>
+      <div class="region-switch-row">
+        <label for="region-switcher-select">Jump to another region:</label>
+        <span id="region-switcher"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Region map -->
+  <section id="region-map" class="section section--map">
+    <div class="container container--wide">
+      <p class="section-kicker">This region's map</p>
+      <h2>Property-Level Explorer</h2>
+      <p class="finding-block__intro">
+        Same interactive map as the statewide page, scoped to this region's own listings &mdash; every filter, the
+        threshold slider, Inspect area, and the property detail card all work identically here.
+      </p>
+      <div class="map-shell">
+        <div class="map-canvas-wrap">
+          <div id="idaho-map" class="map-canvas"></div>
+          <div id="map-stat-readout" class="map-stat-readout"></div>
+        </div>
+        <div class="map-sidebar">
+          <div id="map-legend" class="map-legend"></div>
+          <div id="map-filters" class="map-filters"></div>
+          <div class="inspect-panel">
+            <h4>Inspect area results</h4>
+            <div id="inspect-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Region findings -->
+  <section id="region-findings" class="section">
+    <div class="container container--wide">
+      <p class="section-kicker">This region's findings</p>
+      <h2>What's Behind This Region's Green Dots</h2>
+      <p id="findings-intro" class="finding-block__intro"></p>
+
+      <div id="kpi-tiles" class="kpi-row"></div>
+
+      <div class="finding-block">
+        <h3>Revenue Distribution</h3>
+        <div id="revenue-metric-toggle" class="metric-toggle" style="max-width:280px;">
+          <button class="metric-toggle__btn metric-toggle__btn--active" data-field="revA">Actual (LTM)</button>
+          <button class="metric-toggle__btn" data-field="revP">Potential (LTM)</button>
+        </div>
+        <div class="chart-card chart-card--wide">
+          <canvas id="chart-revenue-distribution"></canvas>
+        </div>
+        <p id="chart-revenue-distribution-caption" class="chart-caption"></p>
+      </div>
+
+      <div class="finding-block">
+        <h3>Rate, Not Occupancy, Separates the Top of This Region</h3>
+        <div class="chart-card chart-card--wide">
+          <canvas id="chart-index-ratio"></canvas>
+        </div>
+        <p id="chart-index-ratio-caption" class="chart-caption"></p>
+      </div>
+
+      <div class="finding-block">
+        <h3>Property Type &amp; Setting</h3>
+        <div class="chart-row">
+          <div>
+            <h4 class="subsection-title" style="margin-top:8px;">Property Type</h4>
+            <div class="chart-card"><canvas id="chart-property-type"></canvas></div>
+          </div>
+          <div>
+            <h4 class="subsection-title" style="margin-top:8px;">Location Type</h4>
+            <div class="chart-card"><canvas id="chart-location-type"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="finding-block">
+        <h3>The Hot Tub Signal</h3>
+        <div class="chart-card chart-card--wide" style="max-width:640px;">
+          <canvas id="chart-hottub"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulatory research -->
+  <section id="regulatory" class="section section--note">
+    <div class="container container--wide">
+      <p class="section-kicker">STR regulatory research</p>
+      <h2>Regulatory Landscape</h2>
+      <p class="finding-block__intro">
+        Not legal advice. Sourced primarily from government/statute text where available, dated at verification, with
+        uncertainty explicitly flagged wherever a primary source could not be confirmed &mdash; verify directly before
+        relying on this for an acquisition or operating decision.
+      </p>
+      <div id="regulatory-body"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <p>Exploratory discovery tool. No buy box has been defined and no property has been underwritten. Revenue figures are AirDNA/USPPD LTM benchmarks, not a full underwriting model. Regulatory content is research, not legal advice.</p>
+  </div>
+</footer>
+
+<div id="property-modal" class="property-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Listing detail">
+  <div class="property-modal__backdrop" onclick="closePropertyModal()"></div>
+  <div class="property-modal__panel">
+    <button type="button" class="property-modal__close" aria-label="Close" onclick="closePropertyModal()">&times;</button>
+    <div id="property-modal-body"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="../../js/config.js?v=20260917-2"></script>
+<script src="../../js/util.js?v=20260917-2"></script>
+<script src="../../js/map.js?v=20260917-2"></script>
+<script src="../../js/charts.js?v=20260917-2"></script>
+<script src="../../js/region.js?v=20260917-2"></script>
+</body>
+</html>

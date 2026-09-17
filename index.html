@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Utah STR Revenue Discovery</title>
+<meta name="description" content="A statewide geographic discovery tool for Utah short-term rental revenue, built from AirDNA/USPPD data -- not a market recommendation or buy box." />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css?v=20260917-2" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-header__brand">
+      <img class="site-header__logo" src="assets/branding/strsearch-logo.webp" alt="STR Search" />
+      <div class="site-header__title">Utah <span>STR Revenue Discovery</span></div>
+    </div>
+    <nav class="site-nav">
+      <a href="#overview">Overview</a>
+      <a href="#market">Market</a>
+      <a href="#map">Map</a>
+      <a href="#regions">Regions</a>
+      <a href="#findings">Findings</a>
+      <a href="#methodology">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Overview -->
+  <section id="overview" class="section section--hero">
+    <div class="container container--wide">
+      <p class="section-kicker">Revenue-side geographic discovery &middot; not a buy box</p>
+      <h1>Where do Utah's strongest short-term rentals concentrate?</h1>
+      <p class="hero-sub">
+        This is a statewide exploration tool, built from AirDNA/USPPD data pulled via Snowflake, to make geographic
+        concentrations of strong-performing Utah listings visible at a glance. It does not pick a market, does not
+        build a buy box, and does not declare any area a "cluster" &mdash; it exists so an analyst can look at the whole
+        state, notice where strong revenue appears to bunch together, and decide where deeper research is worth doing.
+      </p>
+      <p class="hero-note">
+        Working dataset: <strong id="dataset-n">11,386</strong> Utah listings, already narrowed to Entire home/apt with
+        20+ reviews and 230+ active listing nights in the trailing twelve months (LTM) &mdash; see
+        <a href="#methodology">Methodology</a> for the full filter and source detail.
+      </p>
+      <div id="kpi-tiles" class="kpi-row"></div>
+    </div>
+  </section>
+
+  <!-- Market context -->
+  <section id="market" class="section">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 1</p>
+      <h2>Statewide Market Context</h2>
+      <p class="finding-block__intro">
+        Two revenue fields appear throughout this page. <strong>Actual (LTM)</strong> is what a listing really earned
+        over the trailing twelve months. <strong>Potential (LTM)</strong> is AirDNA's modeled revenue if that listing's
+        calendar had been booked optimally &mdash; a ceiling estimate, not a guarantee. They are related but not
+        interchangeable: every listing at or above the threshold on actual revenue is also above it on potential, but a
+        further set of listings clears the potential bar without yet clearing it on actual revenue. That upside-only
+        group is worth its own look and is exposed as a distinct highlight on the map, not folded silently into "green."
+      </p>
+      <h3 class="subsection-title">Revenue Distribution, Statewide</h3>
+      <div id="revenue-metric-toggle" class="metric-toggle" style="max-width:280px;">
+        <button class="metric-toggle__btn metric-toggle__btn--active" data-field="revA">Actual (LTM)</button>
+        <button class="metric-toggle__btn" data-field="revP">Potential (LTM)</button>
+      </div>
+      <div class="chart-card chart-card--wide">
+        <canvas id="chart-revenue-distribution"></canvas>
+      </div>
+      <p id="chart-revenue-distribution-caption" class="chart-caption"></p>
+    </div>
+  </section>
+
+  <!-- The map -->
+  <section id="map" class="section section--map">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 2 &middot; the centerpiece of this page</p>
+      <h2>The Map</h2>
+      <p class="finding-block__intro">
+        Every dot is one listing, plotted at its real coordinates. Green marks listings at or above the revenue
+        threshold; size within that green group scales with how far above the threshold a listing sits, so an
+        exceptional outlier reads as bigger, not just "qualifying." Everything else recedes to a small, muted gray dot
+        &mdash; still visible, because the surrounding market density is part of the story, but out of the way. Use the
+        threshold slider, the Actual/Potential toggle, and the filters to test what's producing the pattern you see;
+        use <strong>Inspect area</strong> (top-left of the map) to drop a radius of up to 20&nbsp;km anywhere &mdash;
+        Carson's ~5&ndash;7&nbsp;mile first-pass scale is the default &mdash; and get a full local market summary: hit
+        rate vs. the statewide baseline, revenue/ADR/occupancy medians, property mix, amenities, and the strongest
+        listings nearby, rather than guessing from dot density alone. Click any listing for its full detail card
+        &mdash; the Airbnb link is a button inside it, never an automatic redirect.
+      </p>
+      <div class="map-shell">
+        <div class="map-canvas-wrap">
+          <div id="idaho-map" class="map-canvas"></div>
+          <div id="map-stat-readout" class="map-stat-readout"></div>
+        </div>
+        <div class="map-sidebar">
+          <div id="map-legend" class="map-legend"></div>
+          <div id="map-filters" class="map-filters"></div>
+          <div class="inspect-panel">
+            <h4>Inspect area results</h4>
+            <div id="inspect-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regions -->
+  <section id="regions" class="section">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 3 &middot; discovered, not assumed</p>
+      <h2>Natural Revenue Regions</h2>
+      <p class="finding-block__intro">
+        These 12 regions were not drawn by hand and don't follow city limits, ZIP codes, or AirDNA's own market
+        boundaries. Each one is a data-driven cluster of listings at or above $90,000 actual revenue that sit close
+        together geographically (density-based clustering, adjacent pockets merged, then grown by 15&nbsp;km to
+        capture the full surrounding market) &mdash; see <a href="#methodology">Methodology</a> for the exact method.
+        A region's size reflects how many strong listings cluster there, not a target headcount; some are tight
+        double-figure pockets, and that's the point. Open any region for its own map, findings, and STR regulatory
+        research.
+      </p>
+      <div id="region-grid" class="region-grid"></div>
+    </div>
+  </section>
+
+  <!-- Findings -->
+  <section id="findings" class="section">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 4</p>
+      <h2>Findings: What's Behind the Green Dots</h2>
+      <p id="findings-intro" class="finding-block__intro">
+        These are supporting observations to help interpret the map &mdash; not a ranking, and not a recommendation.
+        Every statistic below is computed directly from the same working dataset, at a fixed reference threshold.
+      </p>
+
+      <div class="finding-block">
+        <h3>Rate, Not Occupancy, Separates the Top of the Market</h3>
+        <p class="finding-block__intro">
+          Listings at or above the threshold aren't filling more nights than everyone else &mdash; they're charging far
+          more per night, and they tend to be considerably larger properties. The chart below indexes each metric's
+          median for the $90k+ group against the median for everyone below it (1.0&times; = no difference).
+        </p>
+        <div class="chart-card chart-card--wide">
+          <canvas id="chart-index-ratio"></canvas>
+        </div>
+        <p id="chart-index-ratio-caption" class="chart-caption"></p>
+      </div>
+
+      <div class="finding-block">
+        <h3>Property Type &amp; Setting</h3>
+        <p class="finding-block__intro">
+          Houses and cabins make up the large majority of $90k+ listings, both converting at a noticeably higher rate
+          than condos, apartments, or townhouses. Geographically, "Destination/Resort" listings (AirDNA's mountain/lake
+          location type) hold a similarly outsized share &mdash; roughly three times the hit rate of mid-size-city or
+          suburban listings, and well over ten times the hit rate of listings in dense urban location types, even
+          though resort listings aren't the largest slice of total inventory.
+        </p>
+        <div class="chart-row">
+          <div>
+            <h4 class="subsection-title" style="margin-top:8px;">Property Type</h4>
+            <div class="chart-card"><canvas id="chart-property-type"></canvas></div>
+          </div>
+          <div>
+            <h4 class="subsection-title" style="margin-top:8px;">Location Type</h4>
+            <div class="chart-card"><canvas id="chart-location-type"></canvas></div>
+          </div>
+        </div>
+        <p class="chart-caption">Each pair compares a category's share of all listings against its share of $90k+ listings. A category that overshoots its "all listings" bar is over-represented among strong performers.</p>
+      </div>
+
+      <div class="finding-block">
+        <h3>The Hot Tub Signal</h3>
+        <p class="finding-block__intro">
+          Listings with a hot tub reach the $90k+ threshold at a far higher rate than those without &mdash; and the gap
+          holds up even after splitting by property size, so it isn't purely a proxy for "bigger home." That said,
+          correlation isn't causation: hot tubs are also far more common in destination/resort settings and on larger,
+          higher-end properties, so some of this signal is likely shared with those factors rather than the amenity
+          alone. Read it as a strong, investigable pattern &mdash; not a standalone rule.
+        </p>
+        <div class="chart-card chart-card--wide" style="max-width:640px;">
+          <canvas id="chart-hottub"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section id="methodology" class="section section--note">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 5</p>
+      <h2>Methodology &amp; Scope</h2>
+      <ul class="methodology-list">
+        <li><strong>Source:</strong> AirDNA/USPPD Utah property-level export, pulled via Snowflake (<code>Snowflake/Utah/Iqbal_Idaho_2026-09-17-0204.csv</code> &mdash; the filename is an inherited naming-template artifact; the data itself is confirmed Utah).</li>
+        <li><strong>Working population:</strong> Entire home/apt listings in Utah with 20+ reviews and 230+ active listing nights in the trailing twelve months, minus 108 listings flagged by QC as boutique-hotel/event-venue properties rather than genuine single-unit STR comps &mdash; 11,386 listings.</li>
+        <li><strong>Actual (LTM) revenue</strong> = <code>REVENUE_LTM</code>: real trailing-twelve-month gross revenue. <strong>Potential (LTM) revenue</strong> = <code>REVENUE_POTENTIAL_LTM</code>: AirDNA's modeled revenue under an optimized booking calendar.</li>
+        <li><strong>$90,000 reference threshold:</strong> a starting point for visual emphasis and the Findings-section comparisons, adjustable live on the map &mdash; not a market cutoff or investment rule.</li>
+        <li><strong>Region discovery:</strong> DBSCAN density clustering (haversine distance) over listings &ge; $90k actual revenue &mdash; eps=8km, min 4 listings per cluster &mdash; with clusters whose centroids sit within 25km merged into one region (tighter than the Idaho site's 12km/30km, re-tuned so Park City and Salt Lake City &mdash; genuinely different markets ~30km apart &mdash; don't get chained into one region by the urban corridor between them). Each region's boundary is the convex hull of its qualifying listings, buffered 15km outward to capture the surrounding market at every revenue level. Fully reproducible: <code>scripts/generate_map_data.py</code>. This finds concentrations of <em>strong</em> listings, not just dense listing counts &mdash; it will not simply rediscover Salt Lake City.</li>
+        <li><strong>STR regulatory research</strong> (regional pages): sourced from primary government/statute text where available, dated at verification, with uncertainty explicitly flagged where a primary source could not be confirmed. Not legal advice &mdash; verify directly before relying on it for an acquisition or operating decision.</li>
+        <li><strong>Scope:</strong> this is a revenue-side geographic discovery and research tool, the first trial of a workflow meant to generalize to other states. It does not select a market, define a buy box, or make an acquisition recommendation &mdash; those calls stay with the analyst.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <p>Exploratory discovery tool. No market has been selected, no buy box has been defined, and no property has been underwritten. Revenue figures are AirDNA/USPPD LTM benchmarks, not a full underwriting model.</p>
+  </div>
+</footer>
+
+<!-- Property detail modal: clicking a map marker opens this, never Airbnb directly. -->
+<div id="property-modal" class="property-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Listing detail">
+  <div class="property-modal__backdrop" onclick="closePropertyModal()"></div>
+  <div class="property-modal__panel">
+    <button type="button" class="property-modal__close" aria-label="Close" onclick="closePropertyModal()">&times;</button>
+    <div id="property-modal-body"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/config.js?v=20260917-2"></script>
+<script src="js/util.js?v=20260917-2"></script>
+<script src="js/map.js?v=20260917-2"></script>
+<script src="js/charts.js?v=20260917-2"></script>
+<script src="js/main.js?v=20260917-2"></script>
+</body>
+</html>

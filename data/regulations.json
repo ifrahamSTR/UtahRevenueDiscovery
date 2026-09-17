@@ -1,0 +1,327 @@
+{
+  "park-city": {
+    "tier": "Moderate, Diverges Sharply by Jurisdiction",
+    "verifiedDate": "2026-09-17",
+    "summary": "This cluster spans four separate governments that regulate STRs completely differently: Park City itself runs a mature, zoned and licensed program with no owner-occupancy requirement; unincorporated Summit County has no zoning district that actually authorizes short-term rental as a use, leaving much of its existing activity in a documented gray area the county is only now building enforcement capacity to address; Heber City permits STRs with firm occupancy caps and real fines; and Midway is actively shrinking its rental-eligible overlay as of this month. Utah state law does not force any of this open &mdash; it only bars punishing someone solely for listing a property online.",
+    "permitResidency": [
+      "Permit / license required? Yes everywhere, but the zoning gate differs sharply by government. Park City's Nightly Rental License (Municipal Code &sect;4-5-3) is only available in specific zones &mdash; Historic Commercial, Recreation Commercial resort-base areas, General Commercial, and many condo Residential Development projects &mdash; not standard residential zones. Summit County requires a license too, but its own 2022 staff report concedes the Snyderville Basin Development Code has no district that explicitly authorizes short-term rental use, so much existing county activity (e.g. Summit Park) is technically unauthorized. Heber City confines STRs to single-family homes in specific resort/mixed-use zones. Midway confines STRs to its mapped Transient Rental Overlay District, which the City Council voted to shrink on 2026-09-01.",
+      "Primary residence required? No, anywhere in this cluster &mdash; whole-home, non-owner-occupied rentals are the norm in all four governments."
+    ],
+    "operatingLimits": [
+      "No numeric citywide cap in Park City, but the city has stripped Nightly Rental eligibility from specific subdivisions (Chatham Crossing, West Ridge) by ordinance. Summit County ran a six-month moratorium on new licenses in 2022; a substantive ordinance rewrite (caps/tiers) remains in an unfinished working-group stage as of January 2026. Heber City caps occupancy at 1 lodger per 200 sq ft or 16 people, whichever is less, with only one active reservation per property. Midway just stripped rental eligibility from several named neighborhoods (Turnberry, Midway Village, Rising Ranch, and others), effective September 2026.",
+      "Taxes: state sales 4.85% + state transient room tax 0.32%, plus county TRT of 3.0% in Summit County (one of only two Utah counties below the new 4.5% cap) or 4.5% in Wasatch County (raised October 2025), plus municipal TRT of roughly 1-1.5% and, in Park City, a Resort Communities Tax folded into its 9.55% combined sales-tax rate. A cited university study puts unincorporated Summit County's total combined tax burden at 10.47%; Park City and Heber City likely run higher (roughly 13-15%), though the precise combined figures for those two are estimated, not independently confirmed."
+    ],
+    "investorNotes": [
+      "Utah Code &sect;10-8-85.4/&sect;17-50-338 bars only ordinances that punish someone solely for <em>listing</em> an STR online &mdash; it does not require any jurisdiction to zone STRs in anywhere, so each government's posture above is a deliberate local choice, not a legal gray zone.",
+      "Summit County's own enforcement is young: a dedicated code-enforcement officer was hired in March 2025, new tracking software rolled out, and a complaint hotline launches January 16, 2026, following years of an estimated 80% non-compliance rate.",
+      "Don't confuse Summit County, Utah with Summit County, Colorado &mdash; secondary sources sometimes describe a Colorado-style tiered permit system as if it applies here; it was only discussed as a possible model and was never adopted.",
+      "Park City and Deer Valley-area HOA/condo-association rules are a major independent layer &mdash; many associations impose their own minimum-stay, owner-occupancy, or rental-pool requirements regardless of what the city allows."
+    ],
+    "sources": [
+      {"title": "Park City Municipal Code §4-5-3, Regulation of Nightly Rentals", "url": "https://parkcity.municipalcodeonline.com/book/print?type=ordinances&name=4-5-3_Regulation_Of_Nightly_Rentals"},
+      {"title": "Summit County Attorney's Office Staff Report to County Council, May 2022", "url": "https://summitcountyutah.gov/DocumentCenter/View/19267"},
+      {"title": "Heber City Code Ch. 5.26, Short Term Rentals", "url": "https://heber.municipalcodeonline.com/book/print?type=ordinances&name=5.26_Short_Term_Rentals"},
+      {"title": "KPCW — Midway reins in nightly rentals with zone change", "url": "https://www.kpcw.org/wasatch-county/2026-09-04/midway-reins-in-nightly-rentals-with-zone-change"},
+      {"title": "Utah Code §10-8-85.4", "url": "https://le.utah.gov/xcode/Title10/Chapter8/10-8-S85.4.html"},
+      {"title": "Kem C. Gardner Policy Institute — Tourism, Recreation, and Restaurant Taxes in Utah (Nov 2024)", "url": "https://d36oiwf74r1rap.cloudfront.net/wp-content/uploads/2024/12/Tourism-Taxes-Nov2024.pdf"}
+    ]
+  },
+
+  "st-george": {
+    "tier": "Restrictive, with Notable Intra-Region Variance",
+    "verifiedDate": "2026-09-17",
+    "summary": "St. George, Ivins, Santa Clara, and Washington City all confine legal short-term rentals to specific pre-approved overlay zones, planned-development rezones, or named subdivisions, meaning an ordinary single-family homeowner elsewhere in these cities cannot legally operate one at all. Unincorporated Washington County goes further and bans non-owner-occupied whole-home rentals outright. Hurricane is the outlier: it allows STR licenses in ordinary single-family zones, but under a hard per-capita cap, a 300-foot spacing rule, and a waitlist. No Utah state law forces any of this open &mdash; this is a matter of deliberate, sustained local-government choice.",
+    "permitResidency": [
+      "Permit / license required? Yes, in every jurisdiction, but where a license can even be granted varies enormously. St. George confines STRs to an approved Resort Overlay Zone or pre-approved master-planned communities (e.g. Desert Color) &mdash; not standard residential zoning. Ivins requires a formally designated Short Term Rental Overlay District, available only to new developments of 5 or more contiguous acres, not existing subdivisions. Santa Clara permits STRs only within specific Planned Development Residential parcels rezoned for it. Washington City limits STRs to a named list of approved subdivisions (Casitas at Sienna Hills, Coral Ridge Townhomes, and similar). Hurricane is the exception, licensing STRs in ordinary single-family zones under &sect;3-10-11.",
+      "Primary residence required? Only in unincorporated Washington County, where a 2021 amendment banned unhosted whole-home rentals entirely &mdash; the owner must hold the county's Primary Residential Exemption and live on-site at least 183 days a year, or the license is automatically revoked. Not required in St. George, Hurricane, Ivins, Santa Clara, or Washington City."
+    ],
+    "operatingLimits": [
+      "Hurricane caps single-family-zone licenses at 3 per 1,000 population (recalculated annually), with a 300-foot separation between licensed STRs, a one-license-per-owner rule, and a waitlist once the cap fills. Washington County caps unhosted-turned-owner-occupied STRs by size (1,500 to 3,500 sq ft depending on lot size). No numeric caps found in St. George, Ivins, Santa Clara, or Washington City &mdash; their overlay/subdivision-only structure functions as the cap instead.",
+      "Taxes: state sales 4.85% + city/county/special-district add-ons (St. George's combined sales tax is 6.75%) + state transient room tax (roughly 1.07% combined base and secondary layers) + Washington County TRT of 4.5% (raised 2025) + municipal TRT up to 1%. Approximate combined total for a St. George stay is roughly 13.3%, an estimate pending confirmation of the exact state-TRT stacking rule."
+    ],
+    "investorNotes": [
+      "The Utah Office of the Property Rights Ombudsman states plainly that STR permission is \"delegated to the discretion of local communities\" &mdash; the restrictiveness here is a real policy choice, not a state-mandated floor these cities are stuck with.",
+      "Some secondary compliance sites claim a 2025 law bars any city from banning STRs in every zone; this could not be confirmed in the actual bill text and directly conflicts with the Ombudsman's own guidance &mdash; treat it with skepticism.",
+      "City STR-overlay or subdivision approval does not guarantee HOA permission and vice versa &mdash; Desert Color, Kayenta, and other master-planned communities layer their own management/CC&amp;R rules on top of city zoning; always check the specific subdivision.",
+      "La Verkin, Virgin, and Toquerville are separately incorporated towns with essentially no published STR-specific code found &mdash; their actual rules are unconfirmed and should be checked directly before relying on any assumption."
+    ],
+    "sources": [
+      {"title": "St. George City Code, Title 3-2V, Short Term Residential Rental Properties", "url": "https://stgeorge.municipal.codes/Code/3-2V"},
+      {"title": "Hurricane City Code §3-10-11, Short Term Vacation Rentals", "url": "https://www.cityofhurricane.com/DocumentCenter/View/1153/3-10-11-Short-Term-Rentals-Ordinance"},
+      {"title": "Washington County Code §10-13-23, Short Term Rental", "url": "https://codelibrary.amlegal.com/codes/washingtoncout/latest/washingtonco_ut/0-0-0-9832"},
+      {"title": "Ivins City Code Ch. 16.07, Part 8, Short Term Overlay District", "url": "https://codelibrary.amlegal.com/codes/ivinsut/latest/ivins_ut/0-0-0-7164"},
+      {"title": "Utah Office of the Property Rights Ombudsman — Rentals", "url": "https://propertyrights.utah.gov/find-the-law/legal-topics/rentals"},
+      {"title": "Avalara — Washington County bans unhosted short-term rentals", "url": "https://www.avalara.com/mylodgetax/en/blog/2021/10/washington-county-utah-bans-unhosted-short-term-rentals.html"}
+    ]
+  },
+
+  "moab": {
+    "tier": "Restrictive",
+    "verifiedDate": "2026-09-17",
+    "summary": "Both the City of Moab and unincorporated Grand County default to prohibiting new short-term rentals almost everywhere, confining legal operation to a small, mapped set of grandfathered \"Established Overnight Accommodations\" (city) or approved Overlay Districts (county), with no path to license genuinely new supply under current code. Existing operators still face real licensing, inspection, tax-collection, and misdemeanor-backed enforcement on top of that zoning freeze. Utah has no broad preemption forcing either government to allow more &mdash; a 2023 bill that would have required cities to permit STRs on 80% of their land failed and was never enacted.",
+    "permitResidency": [
+      "Permit / license required? Yes. Moab's Nightly Rental License (Title 5, Ch. 5.67) is only available for property already shown on the city's Established Overnight Accommodations Map &mdash; existing licensed properties can renovate but no wholly new nightly-rental development can be created anywhere in the city. Grand County requires an individual land-use permit plus business license per dwelling unit, but only within a mapped Overnight Accommodations Overlay District, and existing overlay developments cannot expand beyond their originally approved unit count.",
+      "Primary residence required? No, in either jurisdiction &mdash; both explicitly contemplate a professional property-management company as the responsible party for non-owner-occupied units."
+    ],
+    "operatingLimits": [
+      "No stated numeric cap in either jurisdiction &mdash; the cap operates entirely through the zoning/map mechanism (no new units citywide in Moab; no expansion of existing overlay developments in the county). Moab caps occupancy at 10 persons unless a Fire-Chief-approved sprinkler system is installed.",
+      "Taxes: unincorporated Grand County runs roughly 7.17% combined sales tax + 4.25% transient room tax, about 11.4% total. City of Moab runs roughly 9.07-9.35% combined sales tax (sources disagree slightly) + 5.75% transient room tax, about 14.8-15.1% total &mdash; among the highest combined lodging-tax burdens found in this Utah research."
+    ],
+    "investorNotes": [
+      "Operating without a license in Moab is a Class A misdemeanor with a per-day fine and possible civil injunction; owners/managers must respond to City inquiries about occupants within one hour.",
+      "\"Spanish Valley\" as a place-name actually spans two counties &mdash; the stretch immediately south of Moab is unincorporated Grand County (covered here), but Spanish Valley continues further south into San Juan County, which runs its own separate ordinance not covered by this research.",
+      "Grand County's own development-ratio benchmark (roughly 1.4 overnight-accommodation units per primary residential unit, as of early 2019) is the explicit policy rationale behind its overlay-only approach &mdash; a deliberate housing-supply tradeoff, not an oversight.",
+      "HOA/CC&amp;R restrictions are common in Moab-area condo and subdivision developments, including some of the very Established Overnight Accommodations complexes themselves, and are unaffected by city/county zoning permission."
+    ],
+    "sources": [
+      {"title": "Moab Municipal Code §17.09.700, Residential short-term rentals prohibited", "url": "https://moab.municipal.codes/Code/17.09.700"},
+      {"title": "Moab Municipal Code Ch. 5.67, Nightly Rental Licenses", "url": "https://moab.municipal.codes/Code/5.67"},
+      {"title": "Grand County Land Use Code §4.6, Overnight Accommodations Overlay Districts", "url": "https://ecode360.com/50409353"},
+      {"title": "Utah H.B. 291, Short Term Rental Amendments, 2023 (failed)", "url": "https://le.utah.gov/~2023/bills/static/HB0291.html"},
+      {"title": "Grand County Transient Room Tax page", "url": "https://www.grandcountyutah.net/238/Transient-Room-Tax"},
+      {"title": "City of Moab Taxes page", "url": "https://www.moabcity.gov/96/Taxes"}
+    ]
+  },
+
+  "salt-lake-city": {
+    "tier": "Restrictive to Moderate, Varies Materially by City",
+    "verifiedDate": "2026-09-17",
+    "summary": "This cluster spans Salt Lake City, Draper, Sandy, and South Jordan, and legal footing differs enormously depending on which city a given property sits in. Salt Lake City legalized and licensed STRs for the first time only in July 2026, and even then only in a short list of downtown/mixed-use zones. Sandy allows STRs only in an owner-occupied primary residence. Draper and South Jordan are comparatively permissive, allowing STRs broadly in residential zones with mainly a licensing hurdle. Utah's state law does not force any of this open &mdash; it only bars punishing someone solely for listing a property online, an authority all four cities retain regardless.",
+    "permitResidency": [
+      "Permit / license required? Yes everywhere. Salt Lake City's brand-new Chapter 5.13 (effective July 1, 2026) confines licenses to a specific list of downtown, mixed-use, and hotel-type zones &mdash; standard residential zones remain categorically excluded, and this ordinance is the city's very first legal path for residential-style nightly rentals. Draper permits STRs in any zoning district that allows residential use. Sandy requires a two-step Special Use Permit plus a separate business license. South Jordan allows STRs from condos, townhomes, single-family homes, and approved detached ADUs, though its public documentation is thin.",
+      "Primary residence required? Only in Sandy, where STRs are legal solely in an owner-occupied primary residence &mdash; corporations, LLCs, absentee owners, and second homes are explicitly excluded. Not required in Salt Lake City (a secondary source loosely implied an owner-occupancy angle via the one-license-per-owner rule, but the primary ordinance text does not actually require it), Draper (except for detached-ADU STRs specifically), or South Jordan."
+    ],
+    "operatingLimits": [
+      "Salt Lake City caps each STR at 200 rental-nights per year with a 2-night minimum stay, and limits buildings of 10 or fewer units to 1 STR license (10% of units in larger buildings) &mdash; though the City Council reportedly paused new applications in mid-2026 to review these very caps, so treat them as current but possibly subject to near-term amendment. Sandy caps at 182 rental-nights per year with a mandatory 1-night gap between bookings. Draper requires a 2-night minimum with no numeric annual cap. South Jordan publishes no numeric cap.",
+      "Taxes: combined sales tax runs roughly 7.25-7.75% across these cities, plus a stacked transient room tax (state roughly 1.07%, county roughly 4.25-4.75%, municipal 1% in Salt Lake City/Draper/South Jordan versus 1.5% in Sandy). Total combined tax on a stay is estimated at roughly 10.5-15%, highest in Sandy."
+    ],
+    "investorNotes": [
+      "Salt Lake City's pre-2026 policy was a blanket residential-zone prohibition, actively enforced via code compliance &mdash; this July 2026 ordinance is a narrow, first-ever legalization, not a loosening of an existing regime, and unlicensed operation still draws a $1,000 civil penalty every 7 days.",
+      "Utah Code &sect;10-8-85.4/&sect;17-50-338 (most recently amended by 2025's H.B. 256) only bars an ordinance that punishes someone solely for <em>listing</em> an STR online &mdash; it does not require any city to zone STRs in anywhere, so Salt Lake City's historical near-total exclusion was, and remains, fully lawful.",
+      "Salt Lake City's ordinance expressly requires written HOA/landlord/condo-association consent as a condition of licensure &mdash; an HOA can independently block a license even where zoning otherwise allows it.",
+      "South Jordan's regime is permissive on its face but procedurally under-documented &mdash; the city's own FAQ directs applicants to contact Business Licensing directly for fee, cap, and occupancy specifics."
+    ],
+    "sources": [
+      {"title": "Salt Lake City Ordinance, Chapter 5.13, Short Term Rental Business License", "url": "http://www.slcdocs.com/Planning/FAQ/Ordinance%20-%202026.05.04.Finance.Short%20Term%20Rental%20Business%20License.pdf"},
+      {"title": "Utah H.B. 256 (2025), Municipal and County Zoning Amendments", "url": "https://le.utah.gov/Session/2025/bills/enrolled/HB0256.pdf"},
+      {"title": "Salt Lake Tribune — SLC moves to license short-term rentals for the first time", "url": "https://www.sltrib.com/news/2026/06/22/slc-places-new-rules-short-term/"},
+      {"title": "City of Draper — Short-Term Rentals", "url": "https://www.draperutah.gov/business-development/planning-and-development/short-term-rentals"},
+      {"title": "Sandy City Code Chapter 15-11", "url": "https://library.municode.com/ut/sandy/codes/city_code?nodeId=COOR_TIT15BULI_CH15-11SHRMRE"},
+      {"title": "South Jordan City Planning FAQ", "url": "https://www.sjc.utah.gov/FAQ.aspx?QID=191"}
+    ]
+  },
+
+  "zion-springdale": {
+    "tier": "Restrictive",
+    "verifiedDate": "2026-09-17",
+    "summary": "Springdale, the primary gateway to Zion National Park, confines legal short-term lodging to a narrow Transient Lodging Overlay layered only on already-commercial parcels, with new zone-change applications accepted just once every two years and capped at three approvals per cycle &mdash; a deliberate, sustained growth-management posture tied to a documented housing-displacement crisis, not a legal accident. Neighboring Rockville appears similarly tightly capped, though its code text could not be independently verified. Only unincorporated Washington County offers a more structured, if still gated, path.",
+    "permitResidency": [
+      "Permit / license required? Yes. Springdale's Transient Lodging Overlay can only be layered onto parcels already zoned Central Commercial or Village Commercial &mdash; ordinary residential homes cannot become new legal STRs at all. New overlay zone-change applications are accepted only during March of even years (2026, 2028), capped at 3 approvals per two-year cycle. Rockville reportedly confines STRs to a designated overlay zone capped at 4 total, plus 5 bed-and-breakfasts via conditional-use permit, though its primary code text was inaccessible and this figure is unverified.",
+      "Primary residence required? Only for Springdale's smallest license type (2 or fewer units) &mdash; the owner must reside on the property as their primary residence and be physically present at all times. Not required for Springdale's larger license types (3 to 12 units, or 13-plus units)."
+    ],
+    "operatingLimits": [
+      "Springdale's larger license types must build one new long-term rental unit per four lodging units, under a 50-year affordability covenant &mdash; a direct housing-mitigation tradeoff for STR approval. A separate Workforce Housing Overlay Zone explicitly prohibits transient lodging outright.",
+      "Taxes: Springdale's combined sales tax is 8.38% (including a full 1.6% Resort Communities Tax), plus state transient room tax of roughly 0.32% and Washington County TRT of 4.5% (effective July 2026) &mdash; combined total roughly 13.2%, and potentially higher if Springdale's own municipal TRT is layered on top at its full permitted rate."
+    ],
+    "investorNotes": [
+      "Springdale's ordinance history is a real, documented policy fight: an outright moratorium on new applications in 2022 was replaced with the current biennial 3-approval cap, down from an initial 5-per-year allowance &mdash; the practical result, per the town's own description, is that the only way to operate is to buy a property with an already-active transferable license.",
+      "Utah Code &sect;10-8-85.4 (and its 2025 update, H.B. 256) only bars an ordinance that punishes someone solely for <em>listing</em> an STR online &mdash; it is not a mandate that STRs be zoned in anywhere, so Springdale's aggressive restrictions are fully lawful and a living counterexample to any broader \"no zone-wide ban\" claim.",
+      "Zion's shuttle-based access and Springdale's on-site-parking emphasis suggest condo/PD developments in the overlay zone likely carry their own HOA parking-allocation rules on top of town code, though this was not independently researched.",
+      "Rockville's code text (scanned/Google Drive PDFs) could not be directly verified &mdash; treat its reported 4-STR cap as a starting point for due diligence, not a confirmed figure."
+    ],
+    "sources": [
+      {"title": "Springdale Transient Lodging page", "url": "https://www.springdale.utah.gov/490/Transient-Lodging"},
+      {"title": "Springdale Town Code Title 10, Article F", "url": "https://www.zoneomics.com/code/springdale-UT/chapter_17"},
+      {"title": "KUER — Springdale puts the brakes on new short-term rentals", "url": "https://www.kuer.org/business-economy/2022-02-25/springdale-puts-the-brakes-on-new-short-term-rentals"},
+      {"title": "Washington County unincorporated STR code", "url": "https://www.zoneomics.com/code/washington-county-unincorporated-UT/chapter_13"},
+      {"title": "Utah Code §10-8-85.4", "url": "https://law.justia.com/codes/utah/2020/title-10/chapter-8/part-1/section-85-4/"}
+    ]
+  },
+
+  "provo-orem": {
+    "tier": "Restrictive",
+    "verifiedDate": "2026-09-17",
+    "summary": "Provo confines legal short-term rentals to eight downtown/commercial/gateway zones only &mdash; every residential and agricultural zone, including the dense BYU-area student neighborhoods, is off-limits &mdash; and caps STRs at 10% of units in any multifamily building. Orem is more restrictive still: short-term rentals are not a legal use anywhere in the city under a standing 2002 ordinance, though an estimated 250 listings operate anyway under light, complaint-driven enforcement while the city works through a still-unresolved rewrite. Neither city's posture is required by state law; both reflect a deliberate local choice.",
+    "permitResidency": [
+      "Permit / license required? Yes in Provo, where a commercial business license with an STR classification is required (roughly $125, about a 2-week processing time), non-transferable at sale, on top of confining STRs to just 8 zones. In Orem, no dedicated STR license exists at all because the use itself is not legal &mdash; some hosts are informally directed toward a standard long-term-rental license, which does not confer STR zoning legality.",
+      "Primary residence required? No in Provo. Not applicable in Orem, since STRs are not a recognized use there; Orem's own mid-2026 council deliberations have narrowed to two draft options &mdash; owner-occupied-only, or non-owner-occupied under strict regulation with density limits and a numerical permit cap &mdash; but a formal vote has been postponed with no new date set as of this research."
+    ],
+    "operatingLimits": [
+      "Provo caps short-term rentals at 10% of total units in any building of 3 or more units &mdash; once that share is reached, no more STRs are allowed in that building regardless of individual owner interest. Orem has no STR permit regime to cap, since the use is currently unauthorized citywide; operating one today risks a Class C misdemeanor zoning-violation charge (up to $500 individual or $1,000 corporate fine, up to 3 months jail, each day a separate offense) under general zoning enforcement.",
+      "Taxes: combined roughly 14.5% in Provo and 14.0% in Orem for stays under 30 nights (7.45% combined sales tax plus roughly 5.5-6% stacked state/county/municipal transient room tax); stays of 30 or more nights are exempt from both sales tax and the room tax in both cities."
+    ],
+    "investorNotes": [
+      "Utah Code &sect;10-8-85.4/&sect;17-50-338, most recently amended by 2025's H.B. 256, only bars an ordinance that punishes someone solely for <em>listing</em> an STR online &mdash; it does not require either city to legalize STRs anywhere, which is why Orem's citywide ban remains fully lawful today.",
+      "Orem's legal status is genuinely unsettled and worth re-checking directly before relying on it &mdash; the city's own council vote on a full rewrite was postponed in July 2026 with no new date scheduled as of this research.",
+      "Given BYU's proximity and the area's dense student-housing/condo stock, individual HOA covenants and condo bylaws may independently prohibit or cap STRs regardless of city zoning &mdash; check per property.",
+      "Provo's fee, occupancy-formula, and some tax figures came from secondary compliance summaries rather than a directly-fetched primary ordinance (the city's own code site blocked direct access) &mdash; treat exact dollar figures as approximate pending direct confirmation."
+    ],
+    "sources": [
+      {"title": "Provo City Code, Ch. 6.33, Short-Term Rental Dwellings", "url": "https://provo.municipal.codes/Code/6.33"},
+      {"title": "Daily Herald — Orem City Council narrows short-term rental options", "url": "https://www.heraldextra.com/news/local/2026/may/31/orem-city-council-narrows-short-term-rental-options/"},
+      {"title": "Utah H.B. 256 (2025), Municipal and County Zoning Amendments", "url": "https://le.utah.gov/Session/2025/bills/enrolled/HB0256.pdf"},
+      {"title": "Utah H.B. 456 (2025), Transient Room Tax Amendments", "url": "https://le.utah.gov/~2025/bills/static/HB0456.html"},
+      {"title": "Daily Herald — Utah County Commission approves 0.25% increase to Transient Room Tax", "url": "https://www.heraldextra.com/news/2025/jun/27/utah-county-commission-approves-increase-of-transient-room-tax-by-25/"}
+    ]
+  },
+
+  "bear-lake-ut": {
+    "tier": "Moderate, More Permissive Than Most Utah Resort Towns",
+    "verifiedDate": "2026-09-17",
+    "summary": "Garden City and Rich County are unusual among Utah's resort markets in explicitly allowing short-term rentals in every zone rather than confining them to an overlay or specific subdivisions &mdash; the main gate is a real licensing and inspection regime rather than zoning. Neither jurisdiction requires owner-occupancy, caps the total number of STRs, or bans whole-home rentals; the tradeoff is a genuine dual-permit process in unincorporated Rich County and firm, escalating enforcement in both.",
+    "permitResidency": [
+      "Permit / license required? Yes, in both jurisdictions, and both affirmatively allow STRs in all zones (Garden City: allowed in all zones except where an HOA opts out; Rich County: authorized in all zones for any complying owner). Garden City requires an STR License per unit ($100 base plus $130 per unit); new applications are accepted only January 1 through April 30 each year. Rich County requires both a business license and a separate conditional-use permit per unit &mdash; a stricter dual-permit structure than Garden City's single license.",
+      "Primary residence required? No, in either jurisdiction. Rich County's own STR definition explicitly excludes owner-present-on-site scenarios (those are instead treated as a hotel, motel, or B&amp;B) &mdash; the framework is built specifically around non-owner-occupied, professionally managed whole-unit rentals."
+    ],
+    "operatingLimits": [
+      "No codified numeric cap or moratorium found in either ordinance. Both calculate occupancy the same way &mdash; roughly 2 persons per 100 sq ft of sleeping area &mdash; and both require posted maximum occupancy and vehicle counts with on-property-only parking.",
+      "Taxes: Garden City's combined sales tax is 8.25% (including a full 1.6% Resort Communities Tax); unincorporated Rich County runs closer to 6.65%. Rich County's transient room tax is reported inconsistently &mdash; the county's own webpage still shows 3%, while independent secondary sources say it was raised to 4.5% effective October 2025; this discrepancy could not be resolved. Net combined total is roughly 11-13% depending on which figure is correct."
+    ],
+    "investorNotes": [
+      "Garden City's own ordinance and license application explicitly acknowledge private HOA authority &mdash; owners must certify awareness that not all subdivisions allow short term rentals and separately obtain HOA approval where applicable; a filed HOA opt-out letter is how a subdivision removes itself from the town's blanket allowance.",
+      "Utah Code &sect;10-8-85.4/&sect;17-50-338 (updated by 2025's H.B. 256) bars only an ordinance that punishes someone solely for <em>listing</em> an STR online, plus outright zone-wide bans &mdash; neither jurisdiction here comes close to that line given their all-zones posture, so this is a case where local policy is more permissive than the state floor requires, not constrained by it.",
+      "Garden City's practical throttle on growth is its once-a-year, four-month application window plus a Town Council review of objections, rather than a stated numeric ceiling &mdash; secondary sources describing a hard cap could not be confirmed against the ordinance text.",
+      "Bear Lake's Utah shore has numerous shorefront subdivisions and HOAs that were not individually researched here &mdash; municipal and county legality is a floor, not a guarantee; a specific HOA can still be more restrictive or ban STRs outright."
+    ],
+    "sources": [
+      {"title": "Garden City Municipal Code Title 8, §§8-600–8-616", "url": "https://media.rainpos.com/709/ordinances_2019_1b.pdf"},
+      {"title": "Rich County STR Ordinance (2026 update)", "url": "https://www.richcounty.gov/wp-content/uploads/2026-ordinance-short-term-rentals.pdf"},
+      {"title": "Garden City official Short-Term Rentals page", "url": "https://www.gardencityutah.gov/short-term-rentals"},
+      {"title": "Utah Code §10-8-85.4", "url": "https://law.justia.com/codes/utah/2020/title-10/chapter-8/part-1/section-85-4/"},
+      {"title": "Avalara — Utah counties raising lodging tax rates, October 2025", "url": "https://www.avalara.com/mylodgetax/en/blog/2025/10/lodging-taxes-rise-in-several-utah-counties.html"}
+    ]
+  },
+
+  "orderville": {
+    "tier": "Uncertain",
+    "verifiedDate": "2026-09-17",
+    "summary": "Orderville's actual short-term-rental rules could not be confirmed from any public source in this research &mdash; the town's own domain is an expired, parked page, and no municipal code, zoning ordinance, or business-license schedule was found online. Kane County's own STR guidance confirms the county does not regulate STRs inside Orderville, meaning whatever rules exist are entirely the town's own and are not publicly documented. This is a genuine research gap, not evidence of permissiveness.",
+    "permitResidency": [
+      "Permit / license required? Unknown &mdash; no Orderville ordinance, zoning code, or business-license schedule could be located. The only confirmed evidence of active town code-maintenance was a November 2025 Planning and Zoning Commission reference to amending fire and Wildland-Urban Interface code, unrelated to STRs specifically.",
+      "Primary residence required? Unknown, for the same reason. Verify directly with the Orderville town clerk before relying on any assumption about legality, zoning, fees, or caps."
+    ],
+    "operatingLimits": [
+      "No cap, moratorium, or occupancy standard could be confirmed for the town itself. Regardless of the town's own zoning silence, Orderville sits in Kane County for tax purposes: state sales 4.85% + county-option sales tax 0.25% + state transient room tax 0.32% + Kane County TRT 4.5% (raised October 2025), roughly 9.9% combined &mdash; possibly higher if Orderville also levies a municipal resort tax, as one unverified secondary source claims for this corridor.",
+      "Enforcement mechanics, fees, and inspection requirements for any town-level rules are entirely unconfirmed."
+    ],
+    "investorNotes": [
+      "Kane County's own STR overview page explicitly states the county does not regulate STRs inside Orderville, Kanab, Glendale, Big Water, or Alton &mdash; each town is left to set its own rules, which for Orderville simply were not publicly findable in this research.",
+      "Treat any Orderville listing as carrying materially higher regulatory uncertainty than Kanab or unincorporated Kane County &mdash; not because the town is known to be restrictive, but because nothing about its actual posture could be verified.",
+      "A same-named \"Glendale\" STR ordinance amendment referenced in some search results turned out to be Glendale, Arizona, and is unrelated &mdash; a reminder to verify jurisdiction carefully in this corridor.",
+      "Given the proximity to Zion and Bryce Canyon, HOA and subdivision-level restrictions are plausible here too, following the pattern documented at Duck Creek Village, but none were specifically researched for Orderville."
+    ],
+    "sources": [
+      {"title": "Kane County Short Term Rentals overview", "url": "https://kane.utah.gov/215/Short-Term-Rentals"},
+      {"title": "Utah Code §10-8-85.4", "url": "https://codes.findlaw.com/ut/title-10-utah-municipal-code/ut-code-sect-10-8-85-4.html"},
+      {"title": "Utah Legislature H.B. 0291 (2023), status page", "url": "https://le.utah.gov/~2023/bills/static/HB0291.html"}
+    ]
+  },
+
+  "kanab": {
+    "tier": "Moderate",
+    "verifiedDate": "2026-09-17",
+    "summary": "Kanab is the only incorporated town in this corridor with a clearly documented, licensed STR framework: a real business-license process, a fire-code occupancy cap, and a mandatory fire inspection. There's no numeric cap or moratorium on the number of licenses, and no owner-occupancy requirement for the standard rental license &mdash; the regulatory floor here is real but not restrictive. Utah's narrow state-level listing protections play essentially no role in a town this permissive already.",
+    "permitResidency": [
+      "Permit / license required? Yes. Kanab City Code &sect;9-01-020 requires a Vacation Rental (whole-unit) or Bed and Breakfast (owner resides on-site, 1 to 5 rooms) business license, with a valid Utah Sales Tax Number, State Registration Number, Health Department approval, and fire-inspection compliance.",
+      "Primary residence required? Only for the separate Bed and Breakfast license type. Not required for the standard Vacation Rental license, which is the more common whole-home model."
+    ],
+    "operatingLimits": [
+      "No numeric cap or moratorium found on the total number of licensed vacation rentals. A 2020 Fire Department memo (still the city's posted guidance) caps occupancy at 10 or fewer unless the structure is upgraded with full fire-sprinkler and alarm systems; two approved exits and interconnected smoke and CO detectors are required per sleeping area.",
+      "Taxes: the confirmed baseline is state sales 4.85% + county-option sales tax 0.25% + state transient room tax 0.32% + Kane County TRT 4.5% (raised October 2025), roughly 9.9% combined &mdash; possibly closer to 11.5% if Kanab does levy the maximum 1.6% Resort Communities Tax as one unverified secondary source claims."
+    ],
+    "investorNotes": [
+      "Operating without final license approval is a Class B misdemeanor &mdash; a real criminal exposure, though the base city business-license fee schedule itself is modest ($50 a year plus $10 per employee, with no separate published STR-specific fee line).",
+      "No published zoning-district use table was found specifying which residential zones permit vacation rentals as-of-right versus conditionally &mdash; Kanab's full zoning code was only available as an unreadable scan; confirm a specific parcel's zoning status directly with the city before relying on an assumption of blanket legality.",
+      "Kane County's own STR page confirms the county does not regulate STRs inside Kanab &mdash; the town's own rules are the only ones that matter for in-town properties.",
+      "This is a genuinely thin-documentation rural market &mdash; several city and county PDFs relevant to STRs exist only as unreadable scanned images."
+    ],
+    "sources": [
+      {"title": "Kanab City Business Licenses", "url": "https://kanab.utah.gov/2183/Business-Licenses"},
+      {"title": "Kanab City — Vacation Rental and Bed & Breakfast Occupancies (fire-code memo)", "url": "https://kanab.utah.gov/DocumentCenter/View/1387/Short-Term-Rentals"},
+      {"title": "Kane County Short Term Rentals overview", "url": "https://kane.utah.gov/215/Short-Term-Rentals"},
+      {"title": "Citizen Portal — Kane County commission adopts transient room tax increase", "url": "https://citizenportal.ai/articles/6531629/"},
+      {"title": "Utah Code §10-8-85.4", "url": "https://codes.findlaw.com/ut/title-10-utah-municipal-code/ut-code-sect-10-8-85-4.html"}
+    ]
+  },
+
+  "duck-creek-village": {
+    "tier": "Moderate, with a Real HOA Layer",
+    "verifiedDate": "2026-09-17",
+    "summary": "Duck Creek Village sits entirely within unincorporated Kane County, where STRs are legal with mandatory registration and no numeric cap, but the area is made up of multiple distinct platted subdivisions that can and do impose their own rental restrictions independent of county zoning &mdash; at least one subdivision's covenants reportedly ban cabin rentals outright. County-level permissiveness is a floor here, not a guarantee, more than in almost any other Utah region in this research.",
+    "permitResidency": [
+      "Permit / license required? Yes. The county process requires a Utah State Sales Tax ID, a Utah State Transient Room Tax ID, and a Kane County Business License, plus zoning compliance under Title 9 of the county's Land Use Ordinance. A reported January 2026 county program allegedly added a $200 initial registration fee, proof of liability insurance, and safety inspections in response to resident complaints &mdash; this detail rests only on an unreachable secondary source and could not be independently confirmed.",
+      "Primary residence required? No &mdash; no owner-occupancy requirement was found for unincorporated Kane County."
+    ],
+    "operatingLimits": [
+      "No numeric cap or moratorium found. No county-specific occupancy or guest cap distinct from Kanab's fire-code rule was located for Duck Creek Village specifically.",
+      "Taxes: roughly 9.9% combined (state sales 4.85% + county-option sales tax 0.25% + state transient room tax 0.32% + Kane County TRT 4.5%, raised October 2025). Illegal or unregistered operation is a Class C misdemeanor, with fines up to $200 per day and up to 90 days imprisonment."
+    ],
+    "investorNotes": [
+      "Duck Creek Village comprises multiple distinct platted subdivisions &mdash; Swains Creek Pines, served by the Duck Creek Pines HOA, and others served by the Duck Creek Ridge HOA &mdash; and at least one secondary source reports Swains Creek Pines' covenants prohibit cabin rentals outright. Real-estate listings specifically market \"No HOA\" Duck Creek Village parcels as more STR-attractive, which itself signals how common HOA rental restrictions are here.",
+      "Always check the specific subdivision's covenants before assuming county-level legality carries through to a given Duck Creek Village parcel &mdash; this is a bigger practical risk here than the county's own permissive registration process would suggest.",
+      "Duck Creek Village is confirmed to sit entirely in Kane County, not Garfield or Iron County, despite its proximity to that county line and to Cedar Breaks.",
+      "The specific zoning-use-table entry authorizing vacation-rental use in Duck Creek Village's actual zone designation was not obtained in this research &mdash; only a general commercial-zone (hotel/motel) excerpt was found."
+    ],
+    "sources": [
+      {"title": "Kane County Short Term Rentals overview", "url": "https://kane.utah.gov/215/Short-Term-Rentals"},
+      {"title": "Duck Creek Village, Utah — Wikipedia", "url": "https://en.wikipedia.org/wiki/Duck_Creek_Village,_Utah"},
+      {"title": "Duck Creek Village Short Term Rentals & Brian Head Airbnb Rules — Pine Time Properties", "url": "https://www.pinetimeproperties.com/post/duck-creek-village-short-term-rentals-brian-head"},
+      {"title": "Duck Creek Pines Home Owners Association listing", "url": "https://hoaproxy.org/hoa/ut/duck-creek-village/duck-creek-pines-home-owners-association"},
+      {"title": "Citizen Portal — Kane County commission adopts transient room tax increase", "url": "https://citizenportal.ai/articles/6531629/"}
+    ]
+  },
+
+  "brian-head": {
+    "tier": "Moderate",
+    "verifiedDate": "2026-09-17",
+    "summary": "Brian Head permits nightly rentals in every zone in town &mdash; single-family, multi-family, and commercial alike &mdash; with no caps, moratoria, or owner-occupancy requirement, but layers on a real licensing, fee, and inspection regime: a disproportionate-cost-of-service fee on top of the standard license fee, a self-remitted 1.5% Enhanced Service fee funding the town shuttle and snow removal, mandatory biennial fire inspections, and a strict three-strike enforcement mechanism. Combined lodging taxes run in the mid-teens percent, among the highest found in this research.",
+    "permitResidency": [
+      "Permit / license required? Yes. A Town business license (Title 3, Ch. 2A-21) is mandatory for every nightly rental, requiring a Utah State Sales Tax ID, a signed Owner Affidavit, proof of dedicated homeowner's insurance (HOA master policies are explicitly not accepted as a substitute), and a passed fire inspection. Nightly rentals are an explicitly permitted use in every one of the town's zones &mdash; single-family, multi-family/condo, General Commercial, and Commercial Village Core.",
+      "Primary residence required? No &mdash; the licensing scheme explicitly contemplates absentee owners renting through a licensed property-management company, consistent with Brian Head's identity as a second-home resort town."
+    ],
+    "operatingLimits": [
+      "No numeric cap or moratorium found &mdash; the Town's own fee-methodology memos show total licensed units moving from 444 (2021) to 434 (2023), a fluctuation rather than an enforced ceiling. A property not connected to the Town's municipal water system is categorically ineligible for a license at all (water hauling for commercial STR use is prohibited).",
+      "Taxes: combined total was 15.17% as of a 2019 town estimate; adjusting for a confirmed 2025 statewide transient-room-tax increase, today's combined burden is roughly 15.9-16% &mdash; a reconciled estimate, not a freshly verified current rate table. This stacks state sales tax (roughly 8.65% combined with Iron County and local layers), state transient room tax (roughly 1.07%), Iron County TRT (reported inconsistently as 3% or 4.25%), the Town's own 1% municipal TRT, a full 1.6% Resort Communities Tax, and the Town's separate 1.5% Enhanced Service fee (self-remitted directly to the Town, not collected by Airbnb or Vrbo)."
+    ],
+    "investorNotes": [
+      "The annual Nightly Rental Disproportionate Cost of Service Fee ($294 per cabin or $108 per condo as of the 2024 rate cycle) is charged on top of the ordinary license fee, justified under Utah Code &sect;10-1-203(5) as recovering the extra public-safety cost of the nightly-rental population &mdash; a real, town-specific cost most other Utah jurisdictions in this research don't impose.",
+      "Enforcement is a three-strike system: any violation is a strike, and three strikes within one year triggers a one-year license suspension; operating without a license at all is a Class B misdemeanor plus escalating daily fines.",
+      "Brian Head is overwhelmingly a condo/PUD town, and the Town's own paperwork explicitly defers to HOAs on parking and noise for condo and commercial-zone units &mdash; individual condo associations (Brian Head has numerous distinct projects, each with its own governing documents) remain free to impose stricter rules, including outright bans, independent of the Town's permissive zoning.",
+      "A fire and life-safety inspection ($30 per unit) is required before initial licensing and at least biennially thereafter for the life of the license &mdash; a recurring cost most comparison markets in this research don't carry."
+    ],
+    "sources": [
+      {"title": "Brian Head Town — Cabin/Short-Term Rental Policy page", "url": "https://brianheadtown.utah.gov/cabin-rental-policy"},
+      {"title": "Brian Head Town — Nightly Rental Disproportionate Cost of Service Fee explanation", "url": "https://cdn.townweb.com/brianheadtown.utah.gov/wp-content/uploads/2023/09/STR-Disproportionate-Fee-Explanation-2023.pdf"},
+      {"title": "Brian Head Town Code, Chapter 14, Municipal Transient Room Tax", "url": "https://cdn.townweb.com/brianheadtown.utah.gov/wp-content/uploads/2023/05/Chapter-14-Municipal-Transient-Room-Tax.pdf"},
+      {"title": "Utah State Legislature, Office of the Legislative Fiscal Analyst — Transient Room Tax 2025 brief", "url": "https://le.utah.gov/interim/2025/pdf/00004309.pdf"},
+      {"title": "Avalara — Brian Head, Utah sales tax rate", "url": "https://www.avalara.com/us/en/taxrates/state-rates/utah/cities/brian-head.html"}
+    ]
+  },
+
+  "ogden-valley": {
+    "tier": "Moderate",
+    "verifiedDate": "2026-09-17",
+    "summary": "Ogden Valley (Eden, unincorporated Weber County, and the separately incorporated town of Huntsville) permits short-term rentals with no numeric cap, but confines legal operation to a handful of resort and commercial zones rather than ordinary residential districts, and layers on a real license-plus-inspection-plus-annual-renewal regime with a dedicated 24/7 on-call agent and a graduated-penalty enforcement system carrying real teeth. A county compliance sweep as recently as 2023 found fewer than a quarter of identified STRs fully compliant, suggesting real gaps between the rules on paper and what's actually happening on the ground.",
+    "permitResidency": [
+      "Permit / license required? Yes, for the roughly 357-listing cluster centered on unincorporated Eden &mdash; both a short-term rental license and a commercial business license are required (Weber County Code Ch. 108-11), issued only after a mandatory initial property inspection. STRs are permitted in the Commercial Valley Resort Recreation zone, the Forest Residential zone, and the Ogden Valley Destination and Recreation Resort zone, plus conditionally in several form-based-code sub-districts &mdash; not in most standard residential zones. Huntsville is a separately incorporated town whose own code could not be retrieved in this research; its STR rules, if different from the county's, are unconfirmed.",
+      "Primary residence required? No, for standard Ogden Valley STRs &mdash; the county's Form-Based Zone table does give a distinct, more favorably-treated \"short-term rental, owner-occupied\" category in some sub-districts, but it is not a mandate."
+    ],
+    "operatingLimits": [
+      "No explicit numeric cap or moratorium &mdash; the county instead achieves a de facto density limit by confining permitted STR use to a minority of zones and explicitly banning STRs from accessory dwelling units, workforce-housing units, and fractional or timeshare-owned units. Maximum occupancy is 2 people per bedroom plus 4, hard-capped at 10, with a 2-consecutive-night minimum stay.",
+      "Taxes: roughly 12% combined in unincorporated Eden (7.25% combined sales tax plus 4.82% transient room tax, the latter raised from 4.25% in October 2025); Huntsville's town limits likely run somewhat higher given its own municipal sales tax, though whether it also levies its own municipal transient room tax is unconfirmed."
+    ],
+    "investorNotes": [
+      "Weber County explicitly voids any STR license issued for a property subject to private covenants restricting short-term rental use, regardless of whether those covenants are enforced by a homeowners association &mdash; county licensing is not a safe harbor against HOA/CC&amp;R restrictions in developments like Powder Mountain, Snowbasin, or Wolf Creek.",
+      "Enforcement carries real financial exposure: daily penalties run 50% of the advertised nightly rate for a minor violation, 100% for a major violation, and 200% for unlicensed operation, with license revocation and a one-to-two-year re-licensing bar for repeat violations.",
+      "A county compliance sweep found only 116 of 515 identified unincorporated-county STRs fully compliant as of 2023 &mdash; the licensing regime described here is real on paper, but actual enforcement has historically lagged well behind it.",
+      "Utah Code &sect;17-50-338 only bars an ordinance that punishes someone solely for <em>listing</em> an STR online &mdash; it does not require the county to zone STRs into any particular district, which is why Weber County's zone-by-zone restriction is fully lawful."
+    ],
+    "sources": [
+      {"title": "Weber County Planning — Nightly Rentals", "url": "https://www.webercountyutah.gov/planning/nightlyrentals.php"},
+      {"title": "Staff Report to the Weber County Commission — Short Term Rental Code Amendments", "url": "https://www.webercountyutah.gov/commission/documents/uploads/H2%20%20Short%20Term%20Rental%20CC%20Staff%20Report.pdf"},
+      {"title": "Standard-Examiner — Weber County officials identify short-term rentals as new focus", "url": "https://www.standard.net/news/local/2023/jun/14/weber-county-officials-identify-short-term-rentals-as-part-of-new-focus/"},
+      {"title": "Avalara — Utah county lodging taxes rise, October 2025", "url": "https://www.avalara.com/mylodgetax/en/blog/2025/10/lodging-taxes-rise-in-several-utah-counties.html"},
+      {"title": "Utah Code §17-50-338", "url": "https://codes.findlaw.com/ut/title-17-counties/ut-code-sect-17-50-338.html"}
+    ]
+  }
+}
