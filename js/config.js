@@ -17,7 +17,7 @@ const CONFIG = {
   thresholdMax: 200000,
   thresholdStep: 5000,
 
-  // "Inspect area" radius, km. Carson's 5-7mi (~8-11km) first-pass scale as
+  // "Inspect area" radius, km. A ~5mi (~8km) first-pass scale as
   // the default; adjustable up to 20km.
   defaultRadiusKm: 8,
   radiusMinKm: 2,
