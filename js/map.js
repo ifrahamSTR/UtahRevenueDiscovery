@@ -569,12 +569,13 @@ function buildLayerControl(opts) {
 
 // ---------------------------------------------------------------------------
 // Region overlay (statewide map only) -- dashed boundary + label per
-// discovered region, clickable through to that region's dedicated page.
+// discovered region. Purely informational (hover for the name); it does not
+// navigate anywhere on click, so it never intercepts an Inspect-area click --
+// region detail pages are reached only via the region cards further down
+// the page, not through the map.
 // ---------------------------------------------------------------------------
-function drawRegionOverlays(regions, opts) {
+function drawRegionOverlays(regions) {
   if (!MAP || !regions || !regions.length) return;
-  opts = opts || {};
-  const linkBase = opts.linkBase || "regions/";
   if (REGION_LAYER) MAP.removeLayer(REGION_LAYER);
   REGION_LAYER = L.layerGroup();
   regions.forEach((r) => {
@@ -586,14 +587,13 @@ function drawRegionOverlays(regions, opts) {
       fillColor: CONFIG.colors.regionStroke,
       fillOpacity: 0.05,
     });
-    poly.bindTooltip(r.name + " — explore this region →", { sticky: true, className: "region-tooltip" });
-    poly.on("click", () => { window.location.href = linkBase + r.id + "/"; });
+    poly.bindTooltip(r.name, { sticky: true, className: "region-tooltip" });
     REGION_LAYER.addLayer(poly);
 
     const label = L.marker(r.centroid, {
       icon: L.divIcon({ className: "region-label", html: "<span>" + escapeHtml(r.name) + "</span>", iconSize: [1, 1] }),
+      interactive: false,
     });
-    label.on("click", () => { window.location.href = linkBase + r.id + "/"; });
     REGION_LAYER.addLayer(label);
   });
   REGION_LAYER.addTo(MAP);
@@ -882,7 +882,7 @@ function initMap(listings, bounds, opts) {
   buildLayerControl({ hasRegions: !!(opts.regions && opts.regions.length) });
   buildInspectControl();
   if (opts.regions && opts.regions.length) {
-    drawRegionOverlays(opts.regions, { linkBase: opts.regionLinkBase });
+    drawRegionOverlays(opts.regions);
   }
 
   MAP.on("zoomend", rescalePointsForZoom);

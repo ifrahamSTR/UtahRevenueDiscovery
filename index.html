@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20260917-4" />
+<link rel="stylesheet" href="css/styles.css?v=20260917-5" />
 </head>
 <body>
 
@@ -37,15 +37,9 @@
       <p class="section-kicker">Revenue-side geographic discovery &middot; not a buy box</p>
       <h1>Where do Utah's strongest short-term rentals concentrate?</h1>
       <p class="hero-sub">
-        This is a statewide exploration tool, built from AirDNA/USPPD data pulled via Snowflake, to make geographic
-        concentrations of strong-performing Utah listings visible at a glance. It does not pick a market, does not
-        build a buy box, and does not declare any area a "cluster" &mdash; it exists so an analyst can look at the whole
-        state, notice where strong revenue appears to bunch together, and decide where deeper research is worth doing.
-      </p>
-      <p class="hero-note">
-        Working dataset: <strong id="dataset-n">11,386</strong> Utah listings, already narrowed to Entire home/apt with
-        20+ reviews and 230+ active listing nights in the trailing twelve months (LTM) &mdash; see
-        <a href="#methodology">Methodology</a> for the full filter and source detail.
+        Built from AirDNA/USPPD data (<strong id="dataset-n">11,386</strong> Utah listings), this tool visualizes where
+        the state's strongest short-term rentals concentrate &mdash; it does not pick a market or build a buy box. See
+        <a href="#methodology">Methodology</a> for filters and sourcing.
       </p>
       <div id="kpi-tiles" class="kpi-row"></div>
     </div>
@@ -57,12 +51,8 @@
       <p class="section-kicker">Section 1</p>
       <h2>Statewide Market Context</h2>
       <p class="finding-block__intro">
-        Two revenue fields appear throughout this page. <strong>Actual (LTM)</strong> is what a listing really earned
-        over the trailing twelve months. <strong>Potential (LTM)</strong> is AirDNA's modeled revenue if that listing's
-        calendar had been booked optimally &mdash; a ceiling estimate, not a guarantee. They are related but not
-        interchangeable: every listing at or above the threshold on actual revenue is also above it on potential, but a
-        further set of listings clears the potential bar without yet clearing it on actual revenue. That upside-only
-        group is worth its own look and is exposed as a distinct highlight on the map, not folded silently into "green."
+        <strong>Actual (LTM)</strong> is what a listing earned over the trailing 12 months; <strong>Potential (LTM)</strong>
+        is AirDNA's modeled ceiling under an optimized calendar &mdash; both are switchable throughout this page.
       </p>
       <h3 class="subsection-title">Revenue Distribution, Statewide</h3>
       <div id="revenue-metric-toggle" class="metric-toggle" style="max-width:280px;">
@@ -226,10 +216,10 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="js/config.js?v=20260917-4"></script>
-<script src="js/util.js?v=20260917-4"></script>
-<script src="js/map.js?v=20260917-4"></script>
-<script src="js/charts.js?v=20260917-4"></script>
-<script src="js/main.js?v=20260917-4"></script>
+<script src="js/config.js?v=20260917-5"></script>
+<script src="js/util.js?v=20260917-5"></script>
+<script src="js/map.js?v=20260917-5"></script>
+<script src="js/charts.js?v=20260917-5"></script>
+<script src="js/main.js?v=20260917-5"></script>
 </body>
 </html>

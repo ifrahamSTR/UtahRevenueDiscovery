@@ -84,8 +84,11 @@ img { max-width: 100%; display: block; }
 
 /* ==== Sections ==== */
 .section { padding: 3rem 0; border-bottom: 1px solid var(--color-border); }
-.section--hero { background: linear-gradient(180deg, var(--brand-surface) 0%, var(--color-bg) 100%); padding-top: 2.25rem; }
+.section--hero { background: linear-gradient(180deg, var(--brand-surface) 0%, var(--color-bg) 100%); padding-top: 2.25rem; padding-bottom: 1.25rem; }
 .section--map { padding-top: 2.25rem; padding-bottom: 2.5rem; }
+/* The map is the centerpiece -- keep everything above it (hero + Section 1)
+   compact so it isn't pushed far down the page. */
+#market { padding: 1.25rem 0 1.5rem; }
 .section-kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; font-weight: 600; color: var(--color-accent); margin-bottom: 0.35rem; }
 .hero-sub { font-size: 1.05rem; color: var(--color-text); max-width: 780px; }
 .hero-note { font-size: 0.92rem; color: var(--color-text-muted); max-width: 780px; margin-top: 0.5rem; }
@@ -248,8 +251,10 @@ img { max-width: 100%; display: block; }
 .leaflet-tooltip { font-size: 0.8rem; line-height: 1.4; }
 
 /* ==== Region overlay (statewide map) ==== */
+/* Informational only, not clickable; labels let clicks pass through so
+   Inspect area still works on top of a region boundary. */
 .region-tooltip { font-weight: 600; font-size: 0.82rem; }
-.region-label { pointer-events: auto; cursor: pointer; }
+.region-label { pointer-events: none; cursor: default; }
 .region-label span {
   display: inline-block; white-space: nowrap; transform: translate(-50%, -50%);
   background: rgba(255,255,255,0.88); color: #0f6e93; border: 1px solid rgba(15,110,147,0.35);

@@ -15,7 +15,7 @@
       const n = document.getElementById("dataset-n");
       if (n) n.textContent = fmtNumber(payload.n);
       if (mapEl) mapEl.innerHTML = "";
-      initMap(payload.listings, payload.bounds, { regions: regionsPayload.regions, regionLinkBase: "regions/" });
+      initMap(payload.listings, payload.bounds, { regions: regionsPayload.regions });
       initFindings(payload.listings);
       renderRegionGrid(payload.listings, regionsPayload.regions);
     })
