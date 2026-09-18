@@ -38,6 +38,46 @@
     return null;
   }
 
+  // How many of a region's $90k+ listings are 1-2 BR vs. 3-4 BR vs. 5+ BR --
+  // lets a reader tell at a glance whether a region's revenue cluster is
+  // carried only by large properties or has strong small/mid-size performers
+  // too, without opening the region. Bucket boundaries are inclusive on both
+  // ends (0-2 / 3-4 / 5+) so every listing lands in exactly one bucket.
+  function bedroomMix(listings) {
+    let sm = 0, md = 0, lg = 0;
+    listings.forEach((l) => {
+      const bd = l.bd || 0;
+      if (bd <= 2) sm++;
+      else if (bd <= 4) md++;
+      else lg++;
+    });
+    return { sm, md, lg, total: sm + md + lg };
+  }
+
+  function bedroomMixHtml(mix) {
+    if (!mix.total) return "";
+    const pct = (n) => (n / mix.total) * 100;
+    const seg = (cls, n) => (n ? '<span class="region-card__bdmix-seg ' + cls + '" style="width:' + pct(n).toFixed(2) + '%"></span>' : "");
+    const item = (cls, label, n) =>
+      '<div class="region-card__bdmix-item"><i class="region-card__bdmix-dot ' + cls + '"></i>' +
+      '<span>' + label + "</span><strong>" + fmtNumber(n) + "</strong></div>";
+    return (
+      '<div class="region-card__bdmix">' +
+      '<div class="region-card__bdmix-label">$90k+ listings by bedroom count</div>' +
+      '<div class="region-card__bdmix-bar">' +
+      seg("region-card__bdmix-seg--sm", mix.sm) +
+      seg("region-card__bdmix-seg--md", mix.md) +
+      seg("region-card__bdmix-seg--lg", mix.lg) +
+      "</div>" +
+      '<div class="region-card__bdmix-items">' +
+      item("region-card__bdmix-dot--sm", "1&ndash;2 BR", mix.sm) +
+      item("region-card__bdmix-dot--md", "3&ndash;4 BR", mix.md) +
+      item("region-card__bdmix-dot--lg", "5+ BR", mix.lg) +
+      "</div>" +
+      "</div>"
+    );
+  }
+
   function renderRegionGrid(listings, regions, regulations) {
     const host = document.getElementById("region-grid");
     if (!host || !regions || !regions.length) return;
@@ -47,7 +87,8 @@
       const above = inRegion.filter((l) => l.revA >= T);
       const medAdr = medianOf(inRegion.map((l) => l.adr));
       const tier = (regulations[r.id] || {}).tier;
-      return { r, n: inRegion.length, nAbove: above.length, rate: inRegion.length ? above.length / inRegion.length : 0, medAdr, tier };
+      const bdMix = bedroomMix(above);
+      return { r, n: inRegion.length, nAbove: above.length, rate: inRegion.length ? above.length / inRegion.length : 0, medAdr, tier, bdMix };
     });
     cards.sort((a, b) => b.nAbove - a.nAbove);
     host.innerHTML = cards
@@ -65,6 +106,7 @@
           '<div class="region-card__stat region-card__stat--above"><strong>' + fmtNumber(c.nAbove) + "</strong><span>&ge; " + fmtCurrencyCompact(T) + "</span></div>" +
           '<div class="region-card__stat"><strong>' + fmtPct(c.rate, 1) + "</strong><span>hit rate</span></div>" +
           "</div>" +
+          bedroomMixHtml(c.bdMix) +
           '<div class="region-card__cta">Explore this region &rarr;</div>' +
           "</a>"
         );

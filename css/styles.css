@@ -305,6 +305,26 @@ img { max-width: 100%; display: block; }
 .region-card__stat strong { font-size: 1rem; color: var(--color-text); }
 .region-card__stat span { font-size: 0.7rem; color: var(--color-text-muted); }
 .region-card__stat--above strong { color: var(--revenue-above-dark); }
+
+/* $90k+ bedroom-size breakdown -- a light->dark sequential ramp on the
+   brand green (not the red/yellow/green tier colors above, which encode
+   regulatory risk and would wrongly imply small/large is good/bad here). */
+.region-card__bdmix { margin-bottom: 12px; padding-top: 10px; border-top: var(--hairline); }
+.region-card__bdmix-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); margin-bottom: 6px; }
+.region-card__bdmix-bar { display: flex; height: 7px; border-radius: 999px; overflow: hidden; background: var(--surface-tint-strong); margin-bottom: 8px; }
+.region-card__bdmix-seg { height: 100%; }
+.region-card__bdmix-seg--sm { background: color-mix(in srgb, var(--brand-green) 32%, white); }
+.region-card__bdmix-seg--md { background: color-mix(in srgb, var(--brand-green) 64%, white); }
+.region-card__bdmix-seg--lg { background: var(--brand-green); }
+.region-card__bdmix-items { display: flex; flex-direction: column; gap: 3px; }
+.region-card__bdmix-item { display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: var(--color-text); }
+.region-card__bdmix-item span { flex: 1; }
+.region-card__bdmix-item strong { color: var(--color-text); font-variant-numeric: tabular-nums; }
+.region-card__bdmix-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.region-card__bdmix-dot--sm { background: color-mix(in srgb, var(--brand-green) 32%, white); }
+.region-card__bdmix-dot--md { background: color-mix(in srgb, var(--brand-green) 64%, white); }
+.region-card__bdmix-dot--lg { background: var(--brand-green); }
+
 .region-card__cta { font-size: 0.82rem; font-weight: 600; color: var(--color-accent); }
 
 /* ==== Findings section ==== */
