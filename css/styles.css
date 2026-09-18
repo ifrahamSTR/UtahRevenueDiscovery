@@ -284,7 +284,11 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow); padding: 18px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .region-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(7,86,70,0.14); }
-.region-card__name { font-weight: 700; color: var(--color-primary); font-size: 1.05rem; margin-bottom: 10px; }
+.region-card__name { font-weight: 700; color: var(--color-primary); font-size: 1.05rem; margin-bottom: 8px; }
+.region-card__tier { display: inline-flex; align-items: center; gap: 5px; font-size: 0.74rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+.region-card__tier--green { background: var(--revenue-above-bg); color: var(--revenue-above-dark); }
+.region-card__tier--yellow { background: var(--accent-tint-strong); color: var(--brand-gold-dark); }
+.region-card__tier--red { background: color-mix(in srgb, var(--color-danger) 14%, white); color: var(--color-danger); }
 .region-card__stats { display: flex; gap: 14px; margin-bottom: 10px; }
 .region-card__stat { display: flex; flex-direction: column; }
 .region-card__stat strong { font-size: 1rem; color: var(--color-text); }
