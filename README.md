@@ -2,7 +2,7 @@
 
 A statewide geographic discovery tool built from AirDNA/USPPD Utah data
 (pulled via Snowflake). It is **not** a buy-box or market-selection report —
-see the Charlotte project (`../../7AugBuyBox/Charlotte/webpage`) for that kind
+see the Charlotte project (`../../../../7AugBuyBox/Charlotte/webpage`) for that kind
 of deliverable, or the sibling Idaho project (`../../Idaho/webpage`) for the
 first trial of this same discovery-tool approach. This site exists to make
 geographic concentrations of strong-revenue Utah listings visually
