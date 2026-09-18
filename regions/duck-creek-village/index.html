@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../../css/styles.css?v=20260918-1" />
+<link rel="stylesheet" href="../../css/styles.css?v=20260918-2" />
 </head>
 <body>
 
@@ -56,14 +56,17 @@
         <div class="map-canvas-wrap">
           <div id="idaho-map" class="map-canvas"></div>
           <div id="map-stat-readout" class="map-stat-readout"></div>
+          <div class="inspect-panel">
+            <div class="inspect-panel__head">
+              <h4>Inspect area results</h4>
+              <button id="inspect-download" class="btn btn--download" type="button" hidden>Download CSV</button>
+            </div>
+            <div id="inspect-results"></div>
+          </div>
         </div>
         <div class="map-sidebar">
           <div id="map-legend" class="map-legend"></div>
           <div id="map-filters" class="map-filters"></div>
-          <div class="inspect-panel">
-            <h4>Inspect area results</h4>
-            <div id="inspect-results"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -154,10 +157,10 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="../../js/config.js?v=20260918-1"></script>
-<script src="../../js/util.js?v=20260918-1"></script>
-<script src="../../js/map.js?v=20260918-1"></script>
-<script src="../../js/charts.js?v=20260918-1"></script>
-<script src="../../js/region.js?v=20260918-1"></script>
+<script src="../../js/config.js?v=20260918-2"></script>
+<script src="../../js/util.js?v=20260918-2"></script>
+<script src="../../js/map.js?v=20260918-2"></script>
+<script src="../../js/charts.js?v=20260918-2"></script>
+<script src="../../js/region.js?v=20260918-2"></script>
 </body>
 </html>

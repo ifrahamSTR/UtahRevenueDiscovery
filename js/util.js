@@ -77,3 +77,23 @@ function debounce(fn, ms) {
     t = setTimeout(() => fn(...args), ms);
   };
 }
+
+// Generic CSV export: `columns` is [{ label, value(row) }, ...]; triggers a
+// browser download, no server round-trip.
+function csvCell(v) {
+  const s = v == null ? "" : String(v);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+function downloadCsv(filename, columns, rows) {
+  const lines = [columns.map((c) => csvCell(c.label)).join(",")];
+  rows.forEach((row) => lines.push(columns.map((c) => csvCell(c.value(row))).join(",")));
+  const blob = new Blob([lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}

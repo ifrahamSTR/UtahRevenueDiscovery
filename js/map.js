@@ -21,6 +21,7 @@ let VIEW_MODE = "points"; // 'points' | 'heatAll' | 'heatQualify'
 let INSPECT_ACTIVE = false;
 let INSPECT_RADIUS = CONFIG.defaultRadiusKm;
 let INSPECT_CENTER = null;
+let INSPECT_NEARBY = [];
 let REGION_LAYER = null;
 
 function defaultRangeFilters() {
@@ -369,8 +370,11 @@ function clearInspect() {
   if (INSPECT_CIRCLE) { MAP.removeLayer(INSPECT_CIRCLE); INSPECT_CIRCLE = null; }
   if (INSPECT_MARKER) { MAP.removeLayer(INSPECT_MARKER); INSPECT_MARKER = null; }
   INSPECT_CENTER = null;
+  INSPECT_NEARBY = [];
   const panel = document.getElementById("inspect-results");
   if (panel) panel.innerHTML = '<p class="inspect-empty">Click anywhere on the map to summarize the listings within the radius.</p>';
+  const dl = document.getElementById("inspect-download");
+  if (dl) dl.hidden = true;
 }
 
 function drawInspectCircle(latlng) {
@@ -412,6 +416,9 @@ function renderInspectResults(nearby) {
   const panel = document.getElementById("inspect-results");
   if (!panel) return;
   const n = nearby.length;
+  INSPECT_NEARBY = nearby;
+  const dl = document.getElementById("inspect-download");
+  if (dl) dl.hidden = n === 0;
   if (!n) {
     panel.innerHTML = '<p class="inspect-empty">No listings from the current filter set fall within ' + INSPECT_RADIUS + " km of that point.</p>";
     return;
@@ -498,6 +505,47 @@ function renderInspectResults(nearby) {
       openPropertyModal(l);
     });
   });
+}
+
+const INSPECT_CSV_COLUMNS = [
+  { label: "Title", value: (l) => l.t },
+  { label: "City", value: (l) => l.city },
+  { label: "AirDNA Market", value: (l) => l.mkt },
+  { label: "AirDNA Submarket", value: (l) => l.sub },
+  { label: "Location Type", value: (l) => l.loc },
+  { label: "Property Type", value: (l) => l.pt },
+  { label: "Bedrooms", value: (l) => l.bd },
+  { label: "Bathrooms", value: (l) => l.ba },
+  { label: "Accommodates", value: (l) => l.acc },
+  { label: "ADR", value: (l) => l.adr },
+  { label: "Occupancy Rate", value: (l) => (l.occ == null ? "" : Math.round(l.occ * 1000) / 10 + "%") },
+  { label: "Actual Revenue (LTM)", value: (l) => l.revA },
+  { label: "Potential Revenue (LTM)", value: (l) => l.revP },
+  { label: "Active Listing Nights (LTM)", value: (l) => l.nights },
+  { label: "Reviews", value: (l) => l.reviews },
+  { label: "Rating", value: (l) => l.rating },
+  { label: "Superhost", value: (l) => (l.sh ? "Yes" : "No") },
+  { label: "Hot Tub", value: (l) => (l.tub ? "Yes" : "No") },
+  { label: "Pool", value: (l) => (l.pool ? "Yes" : "No") },
+  { label: "Parking", value: (l) => (l.park ? "Yes" : "No") },
+  { label: "A/C", value: (l) => (l.air ? "Yes" : "No") },
+  { label: "Gym", value: (l) => (l.gym ? "Yes" : "No") },
+  { label: "Pets Allowed", value: (l) => (l.pets ? "Yes" : "No") },
+  { label: "Kitchen", value: (l) => (l.kitchen ? "Yes" : "No") },
+  { label: "Instant Book", value: (l) => (l.instant ? "Yes" : "No") },
+  { label: "Latitude", value: (l) => l.lat },
+  { label: "Longitude", value: (l) => l.lng },
+  { label: "Listing URL", value: (l) => l.url || "" },
+];
+
+function exportInspectCsv() {
+  if (!INSPECT_NEARBY.length || !INSPECT_CENTER) return;
+  const lat = INSPECT_CENTER.lat.toFixed(4);
+  const lng = INSPECT_CENTER.lng.toFixed(4);
+  const state = (CONFIG.stateAbbr || "str").toLowerCase();
+  const filename = state + "-inspect-area_" + lat + "_" + lng + "_" + INSPECT_RADIUS + "km.csv";
+  const sorted = INSPECT_NEARBY.slice().sort((a, b) => valueFor(b) - valueFor(a));
+  downloadCsv(filename, INSPECT_CSV_COLUMNS, sorted);
 }
 
 function toggleInspectMode(active) {
@@ -639,6 +687,9 @@ function buildInspectControl() {
       });
     }
   }, 0);
+
+  const download = document.getElementById("inspect-download");
+  if (download) download.addEventListener("click", exportInspectCsv);
 }
 
 // ---------------------------------------------------------------------------

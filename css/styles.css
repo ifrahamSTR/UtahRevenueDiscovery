@@ -51,6 +51,11 @@
 }
 
 * { box-sizing: border-box; }
+/* A class-based `display` rule on the same element (e.g. `.btn { display:
+   inline-block }`) has equal specificity to the UA stylesheet's `[hidden]`
+   rule and loads after it, so it silently wins the cascade and the element
+   stays visible. Restore the attribute's actual meaning everywhere. */
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
@@ -126,6 +131,12 @@ img { max-width: 100%; display: block; }
 .map-sidebar { display: flex; flex-direction: column; gap: 14px; }
 .map-legend, .map-filters, .inspect-panel { background: var(--color-surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; }
 .map-legend h4, .map-filters h4, .inspect-panel h4 { font-size: 0.85rem; margin: 0 0 8px; }
+
+.inspect-panel { margin-top: 14px; }
+.inspect-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.inspect-panel__head h4 { margin: 0; }
+.btn--download { padding: 5px 12px; font-size: 0.78rem; background: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-primary-light); flex-shrink: 0; }
+.btn--download:hover { background: var(--surface-tint); }
 .legend-row { display: flex; align-items: center; gap: 8px; margin: 5px 0; font-size: 0.9rem; }
 .legend-swatch { width: 13px; height: 13px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
 .legend-swatch--above { background: var(--revenue-above); box-shadow: 0 0 0 3px var(--revenue-above-bg); }
