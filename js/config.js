@@ -18,10 +18,10 @@ const CONFIG = {
   thresholdStep: 5000,
 
   // "Inspect area" radius, km. A ~5mi (~8km) first-pass scale as
-  // the default; adjustable up to 20km.
+  // the default; adjustable up to 50km.
   defaultRadiusKm: 8,
   radiusMinKm: 2,
-  radiusMaxKm: 20,
+  radiusMaxKm: 50,
   radiusStepKm: 1,
 
   // Fixed reference revenue level shown alongside the live threshold in the
