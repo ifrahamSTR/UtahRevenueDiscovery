@@ -6,6 +6,8 @@
  */
 const CHART_PALETTE = {
   above: "#1fa35c",
+  aboveTint: "rgba(31,163,92,0.16)",
+  aboveDark: "#0d5c33",
   below: "#8b98a6",
   seriesAll: "#5598e7",
   seriesQualify: "#1fa35c",
@@ -219,6 +221,167 @@ function shareChart(canvasId, categories, listings, findings, keyFn) {
 }
 
 // ---------------------------------------------------------------------------
+// Revenue by bedroom count (region pages only -- renderBedroomBoxplot() is a
+// no-op if #chart-bedroom-revenue isn't on the page, exactly like every other
+// render function here; the statewide Findings section simply doesn't have
+// that canvas). A Tukey five-number summary per bedroom count (1 BR..4 BR,
+// 5+ BR grouped; studios excluded -- the ask was "1BR to 5BR"), drawn as
+// Chart.js floating bars for the box plus a small custom plugin for the
+// whiskers/median/outliers -- no extra charting library. n===1 and n===2
+// buckets fall out of the same math (their quartiles just collapse toward
+// the single value/midpoint) rather than needing special-case code.
+// ---------------------------------------------------------------------------
+function bedroomBoxStats(listings) {
+  const buckets = [
+    { label: "1 BR", pred: (l) => l.bd === 1 },
+    { label: "2 BR", pred: (l) => l.bd === 2 },
+    { label: "3 BR", pred: (l) => l.bd === 3 },
+    { label: "4 BR", pred: (l) => l.bd === 4 },
+    { label: "5+ BR", pred: (l) => l.bd >= 5 },
+  ];
+  return buckets.map((b) => {
+    const values = listings.filter((l) => b.pred(l) && l.revA != null).map((l) => l.revA).sort((x, y) => x - y);
+    const n = values.length;
+    if (!n) return { label: b.label, n: 0 };
+    const q1 = quantileOf(values, 0.25);
+    const median = quantileOf(values, 0.5);
+    const q3 = quantileOf(values, 0.75);
+    const iqr = q3 - q1;
+    const lowFence = q1 - 1.5 * iqr;
+    const highFence = q3 + 1.5 * iqr;
+    const inFence = values.filter((v) => v >= lowFence && v <= highFence);
+    const whiskerLow = inFence.length ? inFence[0] : values[0];
+    const whiskerHigh = inFence.length ? inFence[inFence.length - 1] : values[n - 1];
+    const outliers = values.filter((v) => v < whiskerLow || v > whiskerHigh);
+    return { label: b.label, n, min: values[0], max: values[n - 1], q1, median, q3, whiskerLow, whiskerHigh, outliers };
+  });
+}
+
+function boxWhiskerPlugin(stats) {
+  return {
+    id: "boxWhisker",
+    afterDatasetsDraw(chart) {
+      const { ctx, scales } = chart;
+      const meta = chart.getDatasetMeta(0);
+      ctx.save();
+      stats.forEach((s, i) => {
+        const bar = meta.data[i];
+        if (!bar || !s.n) return;
+        const cx = bar.x;
+        const halfBoxW = bar.width / 2;
+        const capHalfW = halfBoxW * 0.55;
+        const yLow = scales.y.getPixelForValue(s.whiskerLow);
+        const yHigh = scales.y.getPixelForValue(s.whiskerHigh);
+        const yQ1 = scales.y.getPixelForValue(s.q1);
+        const yQ3 = scales.y.getPixelForValue(s.q3);
+        const yMed = scales.y.getPixelForValue(s.median);
+
+        ctx.strokeStyle = CHART_PALETTE.above;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(cx, yQ3);
+        ctx.lineTo(cx, yHigh);
+        ctx.moveTo(cx - capHalfW, yHigh);
+        ctx.lineTo(cx + capHalfW, yHigh);
+        ctx.moveTo(cx, yQ1);
+        ctx.lineTo(cx, yLow);
+        ctx.moveTo(cx - capHalfW, yLow);
+        ctx.lineTo(cx + capHalfW, yLow);
+        ctx.stroke();
+
+        ctx.strokeStyle = CHART_PALETTE.aboveDark;
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(cx - halfBoxW, yMed);
+        ctx.lineTo(cx + halfBoxW, yMed);
+        ctx.stroke();
+
+        if (s.outliers && s.outliers.length) {
+          s.outliers.forEach((v) => {
+            const yv = scales.y.getPixelForValue(v);
+            ctx.beginPath();
+            ctx.arc(cx, yv, 4, 0, Math.PI * 2);
+            ctx.fillStyle = CHART_PALETTE.above;
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#ffffff";
+            ctx.stroke();
+          });
+        }
+      });
+      ctx.restore();
+    },
+  };
+}
+
+let BEDROOM_BOX_CHART = null;
+function renderBedroomBoxplot(listings) {
+  const ctx = document.getElementById("chart-bedroom-revenue");
+  if (!ctx) return;
+  const stats = bedroomBoxStats(listings);
+  if (BEDROOM_BOX_CHART) BEDROOM_BOX_CHART.destroy();
+  BEDROOM_BOX_CHART = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: stats.map((s) => s.label),
+      datasets: [
+        {
+          data: stats.map((s) => (s.n ? [s.q1, s.q3] : null)),
+          backgroundColor: CHART_PALETTE.aboveTint,
+          borderColor: CHART_PALETTE.above,
+          borderWidth: 1.5,
+          borderSkipped: false,
+          borderRadius: 2,
+          maxBarThickness: 46,
+          categoryPercentage: 0.7,
+          barPercentage: 0.9,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => items[0].label,
+            label: (item) => {
+              const s = stats[item.dataIndex];
+              if (!s || !s.n) return "No listings at this size";
+              const lines = [
+                "n = " + s.n + " listing" + (s.n === 1 ? "" : "s"),
+                "Median: " + fmtCurrency(s.median),
+                "Interquartile range: " + fmtCurrency(s.q1) + " – " + fmtCurrency(s.q3),
+                "Full range: " + fmtCurrency(s.min) + " – " + fmtCurrency(s.max),
+              ];
+              if (s.n < 3) lines.push("Too few listings for a reliable distribution.");
+              else if (s.outliers.length) lines.push(s.outliers.length + " outlier" + (s.outliers.length === 1 ? "" : "s") + " beyond the whiskers.");
+              return lines;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          title: { display: true, text: "Bedrooms" },
+          ticks: { callback: (v, i) => [stats[i].label, "n=" + stats[i].n] },
+        },
+        y: { grid: baseGrid(), title: { display: true, text: "Actual revenue (LTM)" }, ticks: { callback: (v) => fmtCurrencyCompact(v) } },
+      },
+    },
+    plugins: [boxWhiskerPlugin(stats)],
+  });
+  const caption = document.getElementById("chart-bedroom-revenue-caption");
+  if (caption) {
+    caption.innerHTML =
+      "Each box spans the 25th&ndash;75th percentile (interquartile range) of actual LTM revenue for listings with that many bedrooms; the thick line is the median, " +
+      "whiskers reach the highest/lowest value within 1.5&times; the IQR, and dots beyond them are individual outlier listings. n = listing count per bedroom size &mdash; " +
+      "sizes with very few listings (n&lt;3) are thin evidence, not a reliable distribution. Hover a box for its exact numbers.";
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Hot tub, controlled for size
 // ---------------------------------------------------------------------------
 function renderHotTubChart(listings) {
@@ -276,6 +439,7 @@ function initFindings(listings) {
   initRevenueDistribution(listings, findings);
   renderIndexChart(findings);
   shareChart("chart-property-type", CONFIG.propertyTypeOrder, listings, findings, bucket);
+  renderBedroomBoxplot(listings);
   shareChart("chart-location-type", CONFIG.locationTypeOrder, listings, findings, (l) => l.loc);
   renderHotTubChart(listings);
 }

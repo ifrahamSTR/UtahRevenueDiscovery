@@ -331,7 +331,10 @@ img { max-width: 100%; display: block; }
 .chart-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px; height: 300px; margin-top: 12px; }
 .chart-card--wide { height: 320px; }
 .chart-caption { font-size: 0.85rem; color: var(--color-text-muted); margin-top: 10px; }
-.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 8px; }
+/* auto-fit, not a fixed column count -- the statewide page's row holds 2
+   charts (Property Type, Location Type) and region pages hold 3 (Property
+   Type, Bedroom Revenue, Location Type); one rule sizes both correctly. */
+.chart-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: start; margin-top: 8px; }
 .finding-block { margin-top: 2.75rem; }
 .finding-block:first-of-type { margin-top: 1.5rem; }
 .finding-block h3 { margin-bottom: 4px; }
@@ -359,6 +362,18 @@ img { max-width: 100%; display: block; }
 .regs-card__tier-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brand-green); flex-shrink: 0; }
 .regs-card__verified { font-size: 0.82rem; color: var(--color-text-muted); margin-left: 4px; }
 .regs-card__summary { margin: 0 0 4px; max-width: 780px; }
+/* Expand/collapse the detailed dd-rows + sources -- same <details>/<summary>
+   and ▸/▾ idiom as the map's "Property size"/"Amenities & host" filter
+   groups (see .filter-block--collapsible), so the two accordions in this
+   site read as the same component. Tier + summary stay visible either way. */
+.regs-card__details { margin-top: 16px; padding-top: 14px; border-top: var(--hairline); }
+.regs-card__toggle { cursor: pointer; list-style: none; font-weight: 600; font-size: 0.9rem; color: var(--color-accent); }
+.regs-card__toggle::-webkit-details-marker { display: none; }
+.regs-card__toggle::before { content: "\25b8  "; }
+.regs-card__details[open] > .regs-card__toggle::before { content: "\25be  "; }
+.regs-card__toggle-text--hide { display: none; }
+.regs-card__details[open] .regs-card__toggle-text--show { display: none; }
+.regs-card__details[open] .regs-card__toggle-text--hide { display: inline; }
 .regs-card .dd-rows { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 16px; }
 .regs-card .dd-row { display: grid; grid-template-columns: 190px 1fr; gap: 4px 16px; padding-bottom: 0.6rem; border-bottom: 1px dashed var(--color-border); }
 .regs-card .dd-row:last-child { border-bottom: none; padding-bottom: 0; }

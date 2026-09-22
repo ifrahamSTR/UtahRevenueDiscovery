@@ -48,6 +48,12 @@ function renderRegulatory(reg) {
   html += '<div class="regs-card__tier"><span class="regs-card__tier-dot"></span>' + escapeHtml(reg.tier || "Uncertain") + "</div>";
   html += '<span class="regs-card__verified">Verified ' + escapeHtml(reg.verifiedDate || "") + "</span>";
   html += '<p class="regs-card__summary">' + reg.summary + "</p>";
+  html += '<details class="regs-card__details">';
+  html +=
+    '<summary class="regs-card__toggle">' +
+    '<span class="regs-card__toggle-text regs-card__toggle-text--show">Show full regulatory details</span>' +
+    '<span class="regs-card__toggle-text regs-card__toggle-text--hide">Hide full regulatory details</span>' +
+    "</summary>";
   html += '<div class="dd-rows">';
   html += ddRow("Permit / Residency", reg.permitResidency);
   html += ddRow("Operating Limits", reg.operatingLimits);
@@ -58,6 +64,7 @@ function renderRegulatory(reg) {
     html += reg.sources.map((s) => '<a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener">' + escapeHtml(s.title) + "</a>").join(" &middot; ");
     html += "</p>";
   }
+  html += "</details>";
   html += "</div>";
   host.innerHTML = html;
 }
