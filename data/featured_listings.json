@@ -68,24 +68,24 @@
   "st-george": [
     {
       "tier": "1–2 BR",
-      "tagline": "The red-rock casita",
-      "address": "107 Overlook Ln, Hurricane, UT 84737",
-      "price": 300000,
+      "tagline": "The high-desert hideaway",
+      "address": "84 N Sundance Kid Trl, Central, UT 84722",
+      "price": 400000,
       "beds": 2,
-      "baths": 2,
-      "sqft": 841,
-      "image": "assets/listings/st-george/harrisburg-casita.jpg",
-      "imageAlt": "Stucco desert casita with a covered carport and stone accents in the Harrisburg community",
-      "blurb": "Proof a couples' retreat doesn't need square footage — just the right view and a door that locks behind you.",
+      "baths": 1,
+      "sqft": 1314,
+      "image": "assets/listings/st-george/central-hideaway.jpg",
+      "imageAlt": "Rustic wood-sided ranch home with a wraparound porch, set alone among junipers with mountain views",
+      "blurb": "Twenty-five minutes from town and a world away from the next driveway — a genuine stand-alone getaway, not a subdivision lot.",
       "features": [
-        "Stand-alone stick-built home, not a shared-wall unit",
-        "Covered patio framed by mature trees and red-rock views",
-        "Vaulted ceilings and oversized windows throughout",
-        "Marketed as a lock-and-leave retreat"
+        "Sits in Central, UT, a sparsely populated ranch community — real distance from the nearest neighbor",
+        "Covered deck wraps three full sides of the house",
+        "Fully fenced backyard plus a matching 900 sq ft detached garage",
+        "Updated kitchen with granite counters and glass-front cabinetry"
       ],
-      "hotTub": "The covered patio out back is already shaded and screened by mature landscaping — about as private a couples' soak as this budget buys.",
-      "distance": "5.6 mi from the region's highest-revenue Saint George / Hurricane cluster — close, with real privacy from neighbors on every side.",
-      "zillowUrl": "https://www.zillow.com/homedetails/107-Overlook-Ln-Hurricane-UT-84737/68883130_zpid/"
+      "hotTub": "The wraparound deck already has the room and the privacy — pick the side facing the mountains, away from the driveway.",
+      "distance": "23 mi from the high-revenue cluster — the furthest of the three, traded for genuine seclusion instead of a fenced-in subdivision yard.",
+      "zillowUrl": "https://www.zillow.com/homedetails/84-N-Sundance-Kid-Trl-Central-UT-84722/68875970_zpid/"
     },
     {
       "tier": "3–4 BR",
