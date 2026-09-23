@@ -80,14 +80,21 @@ function renderFeaturedListings(slug, listings) {
   const intro = document.getElementById("featured-listings-intro");
   if (intro) {
     intro.textContent =
-      "Hand-picked from active Zillow listings within this region's footprint, chosen for property style and proximity " +
-      "to the region's highest-revenue cluster — not a recommendation or underwriting.";
+      "Three real, active listings worth a look — hand-picked from this region's own footprint for character as much as " +
+      "the numbers, and weighed by how close they sit to the region's highest-revenue cluster. Not a recommendation or underwriting.";
   }
   const host = document.getElementById("featured-listings-row");
   if (!host) return;
   host.innerHTML = listings.map((l) => (
     '<div class="listing-card">' +
-      '<span class="listing-card__tier">' + escapeHtml(l.tier) + "</span>" +
+      (l.image ?
+        '<div class="listing-card__photo">' +
+          '<img src="../../' + escapeHtml(l.image) + '" alt="' + escapeHtml(l.imageAlt || l.address) + '" loading="lazy" />' +
+          '<span class="listing-card__tier listing-card__tier--onphoto">' + escapeHtml(l.tier) + "</span>" +
+        "</div>"
+      : '<span class="listing-card__tier">' + escapeHtml(l.tier) + "</span>") +
+      '<div class="listing-card__body">' +
+      (l.tagline ? '<h4 class="listing-card__tagline">' + escapeHtml(l.tagline) + "</h4>" : "") +
       '<div class="listing-card__price">' + fmtCurrency(l.price) + "</div>" +
       '<div class="listing-card__address">' + escapeHtml(l.address) + "</div>" +
       '<div class="listing-card__facts"><span>' + l.beds + " bd</span><span>" + l.baths + " ba</span><span>" +
@@ -96,6 +103,7 @@ function renderFeaturedListings(slug, listings) {
       '<p class="listing-card__hottub"><strong>Hot tub:</strong> ' + escapeHtml(l.hotTub) + "</p>" +
       '<p class="listing-card__distance">' + escapeHtml(l.distance) + "</p>" +
       '<a class="btn btn--download listing-card__link" href="' + escapeHtml(l.zillowUrl) + '" target="_blank" rel="noopener">View on Zillow &rarr;</a>' +
+      "</div>" +
     "</div>"
   )).join("");
 }
