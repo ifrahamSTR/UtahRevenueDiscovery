@@ -99,7 +99,10 @@ function renderFeaturedListings(slug, listings) {
       '<div class="listing-card__address">' + escapeHtml(l.address) + "</div>" +
       '<div class="listing-card__facts"><span>' + l.beds + " bd</span><span>" + l.baths + " ba</span><span>" +
         fmtNumber(l.sqft) + " sqft</span></div>" +
-      '<p class="listing-card__style">' + escapeHtml(l.style) + "</p>" +
+      (l.blurb ? '<p class="listing-card__blurb">' + escapeHtml(l.blurb) + "</p>" : "") +
+      (l.features && l.features.length ?
+        '<ul class="listing-card__features">' + l.features.map((f) => "<li>" + escapeHtml(f) + "</li>").join("") + "</ul>"
+      : "") +
       '<p class="listing-card__hottub"><strong>Hot tub:</strong> ' + escapeHtml(l.hotTub) + "</p>" +
       '<p class="listing-card__distance">' + escapeHtml(l.distance) + "</p>" +
       '<a class="btn btn--download listing-card__link" href="' + escapeHtml(l.zillowUrl) + '" target="_blank" rel="noopener">View on Zillow &rarr;</a>' +

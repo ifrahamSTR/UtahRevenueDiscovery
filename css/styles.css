@@ -402,7 +402,10 @@ img { max-width: 100%; display: block; }
 .listing-card__price { font-size: 1.45rem; font-weight: 800; color: var(--color-primary); }
 .listing-card__address { font-size: 0.86rem; color: var(--color-text-muted); margin-top: -8px; }
 .listing-card__facts { display: flex; gap: 14px; font-size: 0.85rem; font-weight: 600; color: var(--color-text); padding: 8px 0; border-top: var(--hairline); border-bottom: var(--hairline); }
-.listing-card__style { font-size: 0.88rem; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+.listing-card__blurb { font-size: 0.92rem; color: var(--color-text); margin: 0; line-height: 1.5; font-style: italic; }
+.listing-card__features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.listing-card__features li { position: relative; padding-left: 22px; font-size: 0.87rem; color: var(--color-text-muted); line-height: 1.4; }
+.listing-card__features li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--color-primary-light); font-weight: 700; }
 .listing-card__hottub { font-size: 0.85rem; color: var(--color-text-muted); background: var(--surface-tint); border-radius: 6px; padding: 8px 10px; margin: 0; line-height: 1.45; }
 .listing-card__hottub strong { color: var(--color-primary); }
 .listing-card__distance { font-size: 0.78rem; color: var(--color-text-muted); margin: 0; }

@@ -10,7 +10,13 @@
       "sqft": 720,
       "image": "assets/listings/park-city/oakley-aframe.jpg",
       "imageAlt": "Brown and green A-frame cabin with a wraparound deck, surrounded by pine trees",
-      "style": "A postcard A-frame from 1965, tucked into the pines of the gated Pine Mountain community and backing straight onto National Forest — the kind of silhouette guests screenshot before they even book.",
+      "blurb": "Built in 1965 and still stopping traffic — the silhouette guests screenshot before they even book.",
+      "features": [
+        "Backs directly onto National Forest inside the gated Pine Mountain community",
+        "Wraparound deck spans two full sides of the house",
+        "Sits on a 0.57-acre wooded lot",
+        "Price already cut $40K — priced to move"
+      ],
       "hotTub": "Claim the shaded side of the wraparound deck, facing into the trees — it's already built, level, and private from the road.",
       "distance": "The furthest of the three from the Old Town / Deer Valley revenue cluster (~21 mi, 35 min) — the trade-off for a genuine A-frame this far under budget.",
       "zillowUrl": "https://www.zillow.com/homedetails/5698-E-Caribou-Dr-Oakley-UT-84055/338074008_zpid/"
@@ -25,7 +31,13 @@
       "sqft": 1896,
       "image": "assets/listings/park-city/rockport-cabin.jpg",
       "imageAlt": "Vaulted wood-ceiling dining nook opening onto a wraparound deck overlooking Rockport Reservoir",
-      "style": "A fully remodeled log cabin that opens through a wall of glass onto a wraparound deck suspended over Rockport Reservoir — vaulted tongue-and-groove ceilings, a river-rock fireplace, and a walk-out basement below.",
+      "blurb": "A fully remodeled log cabin that trades a formal dining room for a wall of glass — because the view is the whole point.",
+      "features": [
+        "Wraparound deck suspended over Rockport Reservoir, lake and mountain views",
+        "Vaulted tongue-and-groove ceilings with a river-rock wood-burning fireplace",
+        "Walk-out basement adds flexible bonus space",
+        "Fully remodeled and move-in ready, not a fixer"
+      ],
       "hotTub": "The far end of the deck past the dining nook keeps the same reservoir view as the glass wall, tucked away from the stairs down to the yard.",
       "distance": "Just 9.8 mi (20 min) from the high-revenue cluster — the closest of the three, and the easiest commute for owner visits.",
       "zillowUrl": "https://www.zillow.com/homedetails/4038-S-Rockport-Blvd-Coalville-UT-84017/218314106_zpid/"
@@ -40,7 +52,14 @@
       "sqft": 4258,
       "image": "assets/listings/park-city/cherry-canyon-lodge.jpg",
       "imageAlt": "Long mountain lodge at sunset with a covered deck running the full length of the house",
-      "style": "A sprawling lodge on 2.82 horse-friendly acres, wrapped end to end in a covered deck — stone accents, a standing-seam metal roof, and a walk-out basement with room for a future ADU.",
+      "blurb": "Built like a ski lodge, sized for a group buy — six bedrooms under one standing-seam roof.",
+      "features": [
+        "Covered deck runs the entire length of the house",
+        "2.82 horse-friendly acres with an oversized 3-car garage",
+        "Stone accents and a standing-seam metal roof throughout",
+        "Walk-out basement leaves room for a future ADU",
+        "Listed at a 25-minute drive to Park City"
+      ],
       "hotTub": "Anchor it at the far end of the covered deck, away from the garage entry — dry under the roofline year-round, with the whole valley laid out below.",
       "distance": "About 13.6 mi from the cluster — the listing itself puts it at a 25-minute drive to Park City.",
       "zillowUrl": "https://www.zillow.com/homedetails/615-E-Cherry-Canyon-Dr-Coalville-UT-84017/2071462652_zpid/"
@@ -57,7 +76,13 @@
       "sqft": 841,
       "image": "assets/listings/st-george/harrisburg-casita.jpg",
       "imageAlt": "Stucco desert casita with a covered carport and stone accents in the Harrisburg community",
-      "style": "A stand-alone stick-built casita in Harrisburg, not a shared-wall unit — vaulted ceilings, mature trees, and a covered patio framing red-rock views. Listed as a lock-and-leave retreat, and it shows.",
+      "blurb": "Proof a couples' retreat doesn't need square footage — just the right view and a door that locks behind you.",
+      "features": [
+        "Stand-alone stick-built home, not a shared-wall unit",
+        "Covered patio framed by mature trees and red-rock views",
+        "Vaulted ceilings and oversized windows throughout",
+        "Marketed as a lock-and-leave retreat"
+      ],
       "hotTub": "The covered patio out back is already shaded and screened by mature landscaping — about as private a couples' soak as this budget buys.",
       "distance": "5.6 mi from the region's highest-revenue Saint George / Hurricane cluster — close, with real privacy from neighbors on every side.",
       "zillowUrl": "https://www.zillow.com/homedetails/107-Overlook-Ln-Hurricane-UT-84737/68883130_zpid/"
@@ -72,7 +97,13 @@
       "sqft": 2084,
       "image": "assets/listings/st-george/ivins-redcliff.jpg",
       "imageAlt": "Tile-roofed stucco home in Ivins with the red cliffs of Snow Canyon rising behind it",
-      "style": "Freshly updated with new quartz counters and fixtures, on a fully fenced and landscaped lot with the red cliffs of Snow Canyon as a backdrop — a quieter, more private corner of the region than the St. George core.",
+      "blurb": "New counters, new fixtures, and a 2,000-foot red cliff standing in for a backyard neighbor.",
+      "features": [
+        "Fully fenced and landscaped yard, private on all sides",
+        "New quartz countertops, fixtures, and interior paint throughout",
+        "Oversized 3-car garage plus 2,084 sq ft to spread out",
+        "Minutes from Snow Canyon State Park and Tuacahn Amphitheatre"
+      ],
       "hotTub": "The fenced backyard is already enclosed on all sides — tuck it along the back wall, out of sightline from both neighbors and the street.",
       "distance": "14.6 mi from the cluster — the furthest of the three, traded for a private, fully fenced yard and the Snow Canyon views.",
       "zillowUrl": "https://www.zillow.com/homedetails/76-S-330-W-Ivins-UT-84738/89415914_zpid/"
@@ -87,7 +118,13 @@
       "sqft": 2866,
       "image": "assets/listings/st-george/sandhollow-pool.jpg",
       "imageAlt": "Private walled pool courtyard under a shaded pergola with desert mountain views beyond",
-      "style": "Fully furnished in Sand Hollow Resort, with a private covered patio enclosed by its own walls — not a shared resort pool, a plunge/swim spa that belongs only to this house — plus a whole-home fire suppression system.",
+      "blurb": "The rare resort listing where the pool is actually yours — walled off from every other unit in the community.",
+      "features": [
+        "Private covered patio enclosed by its own walls, with a swim spa",
+        "Fully furnished and turnkey — move in or rent night one",
+        "Whole-home fire suppression sprinkler system",
+        "Sand Hollow Resort access: 3 community pools, golf, clubhouse dining"
+      ],
       "hotTub": "Already there: a private swim spa on the walled, pergola-shaded patio, fully screened from every neighboring unit — about as private as a couples' or group soak gets in a resort community.",
       "distance": "Just 1.7 mi from the high-revenue cluster — the closest of the three, inside a gated resort with pools, a clubhouse, and golf.",
       "zillowUrl": "https://www.zillow.com/homedetails/3243-S-4900-W-Hurricane-UT-84737/201093071_zpid/"
