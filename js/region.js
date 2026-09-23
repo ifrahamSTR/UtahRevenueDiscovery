@@ -69,6 +69,37 @@ function renderRegulatory(reg) {
   host.innerHTML = html;
 }
 
+// Hand-researched, data-driven acquisition-target cards -- data/featured_listings.json
+// only has entries for a couple of regions so far; the section stays `hidden` (see
+// region.html) everywhere else, which keeps this purely additive.
+function renderFeaturedListings(slug, listings) {
+  const section = document.getElementById("featured-listings");
+  if (!section) return;
+  if (!listings || !listings.length) { section.hidden = true; return; }
+  section.hidden = false;
+  const intro = document.getElementById("featured-listings-intro");
+  if (intro) {
+    intro.textContent =
+      "Hand-picked from active Zillow listings within this region's footprint, chosen for property style and proximity " +
+      "to the region's highest-revenue cluster — not a recommendation or underwriting.";
+  }
+  const host = document.getElementById("featured-listings-row");
+  if (!host) return;
+  host.innerHTML = listings.map((l) => (
+    '<div class="listing-card">' +
+      '<span class="listing-card__tier">' + escapeHtml(l.tier) + "</span>" +
+      '<div class="listing-card__price">' + fmtCurrency(l.price) + "</div>" +
+      '<div class="listing-card__address">' + escapeHtml(l.address) + "</div>" +
+      '<div class="listing-card__facts"><span>' + l.beds + " bd</span><span>" + l.baths + " ba</span><span>" +
+        fmtNumber(l.sqft) + " sqft</span></div>" +
+      '<p class="listing-card__style">' + escapeHtml(l.style) + "</p>" +
+      '<p class="listing-card__hottub"><strong>Hot tub:</strong> ' + escapeHtml(l.hotTub) + "</p>" +
+      '<p class="listing-card__distance">' + escapeHtml(l.distance) + "</p>" +
+      '<a class="btn btn--download listing-card__link" href="' + escapeHtml(l.zillowUrl) + '" target="_blank" rel="noopener">View on Zillow &rarr;</a>' +
+    "</div>"
+  )).join("");
+}
+
 // Data-grounded answer to "what does this cluster actually cover" -- counts
 // real listing-level city attribution (AirDNA's own city field), not the
 // region's hand-assigned display name. Reuses topCounts() from map.js.
@@ -110,8 +141,9 @@ function renderRegionSwitcher(regions, currentSlug) {
     fetch("../../data/listings.json").then((r) => r.json()),
     fetch("../../data/regions.json").then((r) => r.json()),
     fetch("../../data/regulations.json").then((r) => r.json()).catch(() => ({})),
+    fetch("../../data/featured_listings.json").then((r) => r.json()).catch(() => ({})),
   ])
-    .then(([listingsPayload, regionsPayload, regulations]) => {
+    .then(([listingsPayload, regionsPayload, regulations, featuredListings]) => {
       const regions = regionsPayload.regions || [];
       const region = regions.find((r) => r.id === slug);
       if (!region) {
@@ -141,6 +173,7 @@ function renderRegionSwitcher(regions, currentSlug) {
       initFindings(regionListings);
       renderLocations(regionListings);
       renderRegulatory((regulations || {})[slug]);
+      renderFeaturedListings(slug, (featuredListings || {})[slug]);
       renderRegionSwitcher(regions, slug);
     })
     .catch((err) => {

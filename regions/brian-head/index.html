@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../../css/styles.css?v=20260919-2" />
+<link rel="stylesheet" href="../../css/styles.css?v=20260923-1" />
 </head>
 <body>
 
@@ -129,6 +129,19 @@
     </div>
   </section>
 
+  <!-- Featured acquisition targets -- data-driven from data/featured_listings.json; only
+       rendered (unhidden) when that file has an entry for the current region slug, so this
+       section is invisible on every region without hand-researched listings. -->
+  <section id="featured-listings" class="section section--note" hidden>
+    <div class="container container--wide">
+      <p class="section-kicker">Illustrative acquisition targets</p>
+      <h2>Three Listings Worth a Look</h2>
+      <p class="finding-block__intro" id="featured-listings-intro"></p>
+      <div id="featured-listings-row" class="listings-row"></div>
+      <p class="listing-disclaimer">Sourced from active Zillow listings at the time of research &mdash; prices, availability, and photos change daily. Confirm directly on Zillow before acting. Not a recommendation or underwriting.</p>
+    </div>
+  </section>
+
   <!-- Regulatory research -->
   <section id="regulatory" class="section section--note">
     <div class="container container--wide">
@@ -162,10 +175,10 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="../../js/config.js?v=20260919-2"></script>
-<script src="../../js/util.js?v=20260919-2"></script>
-<script src="../../js/map.js?v=20260919-2"></script>
-<script src="../../js/charts.js?v=20260919-2"></script>
-<script src="../../js/region.js?v=20260919-2"></script>
+<script src="../../js/config.js?v=20260923-1"></script>
+<script src="../../js/util.js?v=20260923-1"></script>
+<script src="../../js/map.js?v=20260923-1"></script>
+<script src="../../js/charts.js?v=20260923-1"></script>
+<script src="../../js/region.js?v=20260923-1"></script>
 </body>
 </html>

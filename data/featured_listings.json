@@ -1,0 +1,40 @@
+{
+  "park-city": [
+    {
+      "tier": "1–2 BR",
+      "address": "5698 E Caribou Dr, Oakley, UT 84055",
+      "price": 325000,
+      "beds": 2,
+      "baths": 1,
+      "sqft": 720,
+      "style": "True A-frame cabin (built 1965) on 0.57 acres in the gated Pine Mountain community, backing directly to National Forest. Existing wraparound deck on two sides.",
+      "hotTub": "Set it on the side deck facing the trees — already framed, level, and shaded from the afternoon sun.",
+      "distance": "~21 mi (35 min) from this region's highest-revenue Old Town / Deer Valley cluster — the trade-off for a genuine A-frame this far under budget.",
+      "zillowUrl": "https://www.zillow.com/homedetails/5698-E-Caribou-Dr-Oakley-UT-84055/338074008_zpid/"
+    },
+    {
+      "tier": "3–4 BR",
+      "address": "4038 S Rockport Blvd, Coalville, UT 84017",
+      "price": 560000,
+      "beds": 3,
+      "baths": 1,
+      "sqft": 1896,
+      "style": "Remodeled log cabin with a full wraparound deck, walk-out basement, and lake + mountain views over Rockport Reservoir.",
+      "hotTub": "Far corner of the wraparound deck off the living-room glass wall — same reservoir view as the dining nook, away from the entry stairs.",
+      "distance": "~9.8 mi (20 min) from the high-revenue cluster — the closest of the three picks.",
+      "zillowUrl": "https://www.zillow.com/homedetails/4038-S-Rockport-Blvd-Coalville-UT-84017/218314106_zpid/"
+    },
+    {
+      "tier": "5+ BR",
+      "address": "615 E Cherry Canyon Dr, Coalville, UT 84017",
+      "price": 1250000,
+      "beds": 6,
+      "baths": 4,
+      "sqft": 4258,
+      "style": "Mountain lodge on 2.82 horse-friendly acres with a covered deck running the full length of the house, stone accents, metal roof, and a walk-out basement with ADU potential.",
+      "hotTub": "End of the covered deck farthest from the garage entry — stays dry under the roofline and keeps foot traffic clear.",
+      "distance": "~13.6 mi (listed as 25 min to Park City) from the high-revenue cluster.",
+      "zillowUrl": "https://www.zillow.com/homedetails/615-E-Cherry-Canyon-Dr-Coalville-UT-84017/2071462652_zpid/"
+    }
+  ]
+}
