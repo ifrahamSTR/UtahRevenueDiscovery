@@ -130,6 +130,7 @@ function initRevenueDistribution(listings, findings) {
 // ---------------------------------------------------------------------------
 // Index-ratio chart: what separates $90k+ listings, on one comparable axis
 // ---------------------------------------------------------------------------
+let INDEX_CHART = null;
 function renderIndexChart(findings) {
   const ctx = document.getElementById("chart-index-ratio");
   if (!ctx) return;
@@ -139,7 +140,8 @@ function renderIndexChart(findings) {
     { label: "Sleeps (accommodates)", ratio: findings.medAbove.acc / findings.medBelow.acc },
     { label: "Occupancy", ratio: findings.medAbove.occ / findings.medBelow.occ },
   ];
-  new Chart(ctx, {
+  if (INDEX_CHART) INDEX_CHART.destroy();
+  INDEX_CHART = new Chart(ctx, {
     type: "bar",
     data: {
       labels: rows.map((r) => r.label),
@@ -190,6 +192,7 @@ function renderIndexChart(findings) {
 // ---------------------------------------------------------------------------
 // Property type / location type share comparison (All vs Qualifying)
 // ---------------------------------------------------------------------------
+const SHARE_CHARTS = {};
 function shareChart(canvasId, categories, listings, findings, keyFn) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) return;
@@ -197,7 +200,8 @@ function shareChart(canvasId, categories, listings, findings, keyFn) {
   const nAbove = findings.above.length;
   const allShares = categories.map((c) => listings.filter((l) => keyFn(l) === c).length / n);
   const aboveShares = categories.map((c) => findings.above.filter((l) => keyFn(l) === c).length / nAbove);
-  new Chart(ctx, {
+  if (SHARE_CHARTS[canvasId]) SHARE_CHARTS[canvasId].destroy();
+  SHARE_CHARTS[canvasId] = new Chart(ctx, {
     type: "bar",
     data: {
       labels: categories,
@@ -384,6 +388,7 @@ function renderBedroomBoxplot(listings) {
 // ---------------------------------------------------------------------------
 // Hot tub, controlled for size
 // ---------------------------------------------------------------------------
+let HOTTUB_CHART = null;
 function renderHotTubChart(listings) {
   const ctx = document.getElementById("chart-hottub");
   if (!ctx) return;
@@ -400,7 +405,8 @@ function renderHotTubChart(listings) {
     const g = listings.filter((l) => b.pred(l) && !l.tub);
     return g.length ? g.filter((l) => l.revA >= T).length / g.length : 0;
   });
-  new Chart(ctx, {
+  if (HOTTUB_CHART) HOTTUB_CHART.destroy();
+  HOTTUB_CHART = new Chart(ctx, {
     type: "bar",
     data: {
       labels: bands.map((b) => b.label),
