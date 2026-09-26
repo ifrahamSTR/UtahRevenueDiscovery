@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Region Editor (local-only) — Utah STR Revenue Discovery</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.20.2/dist/leaflet-geoman.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/styles.css?v=20260926-5" />
+<link rel="stylesheet" href="editor.css?v=20260926-5" />
+</head>
+<body class="editor-body">
+
+<div class="editor-banner">
+  <strong>Local-only analyst tool.</strong> Editing here has no effect on the live site until you
+  click Save and push the resulting file changes. Run via
+  <code>python3 scripts/region_editor_server.py</code> — Save will not work if this page was opened
+  any other way (e.g. directly from GitHub Pages).
+</div>
+
+<header class="editor-header">
+  <div class="editor-header__title">Utah Region Editor</div>
+  <div class="editor-header__actions">
+    <span id="editor-status" class="editor-status"></span>
+    <button id="btn-save" class="btn editor-btn editor-btn--primary" type="button">Save</button>
+  </div>
+</header>
+
+<main class="editor-main">
+  <div class="editor-map-wrap">
+    <div id="editor-map" class="editor-map"></div>
+    <div class="editor-toolbar">
+      <button id="btn-new-region" class="btn editor-btn" type="button">+ New region</button>
+      <button id="btn-merge" class="btn editor-btn" type="button" disabled>Merge selected</button>
+      <button id="btn-delete" class="btn editor-btn editor-btn--danger" type="button" disabled>Delete selected</button>
+      <span class="editor-toolbar__hint">Drag a vertex to reshape. Use the draw tool (top-right, on the map) for a brand-new region. Use Cut Mode to shrink a region, then draw a new one in the freed area to "split."</span>
+    </div>
+  </div>
+
+  <aside class="editor-sidebar">
+    <section class="editor-panel">
+      <h3>Regions <span id="region-count-badge" class="editor-badge"></span></h3>
+      <p class="editor-panel__hint">Click a region to select it (for merge/delete) and see its full stats below.</p>
+      <div id="region-list" class="region-list"></div>
+    </section>
+
+    <section class="editor-panel">
+      <h3 id="detail-heading">Statewide summary</h3>
+      <div id="kpi-tiles" class="kpi-row kpi-row--editor"></div>
+      <p id="findings-intro" class="finding-block__intro"></p>
+
+      <div class="finding-block">
+        <h4>Revenue Distribution</h4>
+        <div id="revenue-metric-toggle" class="metric-toggle" style="max-width:280px;">
+          <button class="metric-toggle__btn metric-toggle__btn--active" data-field="revA">Actual (LTM)</button>
+          <button class="metric-toggle__btn" data-field="revP">Potential (LTM)</button>
+        </div>
+        <div class="chart-card chart-card--wide">
+          <canvas id="chart-revenue-distribution"></canvas>
+        </div>
+        <p id="chart-revenue-distribution-caption" class="chart-caption"></p>
+      </div>
+
+      <div class="finding-block">
+        <h4>Rate, Not Occupancy</h4>
+        <div class="chart-card chart-card--wide">
+          <canvas id="chart-index-ratio"></canvas>
+        </div>
+        <p id="chart-index-ratio-caption" class="chart-caption"></p>
+      </div>
+
+      <div class="finding-block">
+        <h4>Property Type &amp; Setting</h4>
+        <div class="chart-row">
+          <div>
+            <h5 class="subsection-title">Property Type</h5>
+            <div class="chart-card"><canvas id="chart-property-type"></canvas></div>
+          </div>
+          <div>
+            <h5 class="subsection-title">Revenue by Bedroom Count</h5>
+            <div class="chart-card"><canvas id="chart-bedroom-revenue"></canvas></div>
+            <p id="chart-bedroom-revenue-caption" class="chart-caption"></p>
+          </div>
+          <div>
+            <h5 class="subsection-title">Location Type</h5>
+            <div class="chart-card"><canvas id="chart-location-type"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="finding-block">
+        <h4>Hot Tub Signal</h4>
+        <div class="chart-card chart-card--wide" style="max-width:640px;">
+          <canvas id="chart-hottub"></canvas>
+        </div>
+      </div>
+    </section>
+  </aside>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.20.2/dist/leaflet-geoman.min.js"></script>
+<script src="https://unpkg.com/@turf/turf@7.4.0/turf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="../js/config.js?v=20260926-5"></script>
+<script src="../js/util.js?v=20260926-5"></script>
+<script src="../js/charts.js?v=20260926-5"></script>
+<script src="../js/region-editor.js?v=20260926-5"></script>
+</body>
+</html>

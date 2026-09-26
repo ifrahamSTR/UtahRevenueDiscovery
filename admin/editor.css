@@ -1,0 +1,68 @@
+/* Region editor -- local-only analyst tool, never linked from the public
+   site. Deliberately separate from css/styles.css (which the public pages
+   load) so admin-only layout never has to be reasoned about there. Reuses
+   css/styles.css's tokens/components (--color-*, .chart-card, .kpi-*,
+   .finding-block, .btn) directly -- this file only adds the editor's own
+   page chrome. */
+
+.editor-body { margin: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+.editor-banner {
+  background: #fff4e5; color: #7a4a00; border-bottom: 1px solid #f0c987;
+  padding: 8px 16px; font-size: 0.85rem; text-align: center; flex-shrink: 0;
+}
+.editor-banner code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px; }
+
+.editor-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px; border-bottom: 1px solid var(--color-border); flex-shrink: 0;
+  background: var(--color-surface);
+}
+.editor-header__title { font-weight: 800; font-size: 1.05rem; color: var(--color-primary); }
+.editor-header__actions { display: flex; align-items: center; gap: 12px; }
+.editor-status { font-size: 0.85rem; color: var(--color-text-muted); min-height: 1.2em; }
+.editor-status--ok { color: var(--brand-green-dark, #0d5c33); font-weight: 600; }
+.editor-status--error { color: #b3261e; font-weight: 600; }
+.editor-status--busy { color: var(--color-accent); }
+
+.editor-btn { background: var(--color-surface); color: var(--color-primary); border: 1px solid var(--color-border); padding: 7px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+.editor-btn:hover:not(:disabled) { border-color: var(--color-primary-light); }
+.editor-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.editor-btn--primary { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+.editor-btn--danger { color: #b3261e; border-color: #e3a29c; }
+
+.editor-main { flex: 1; display: flex; min-height: 0; }
+
+.editor-map-wrap { flex: 1 1 62%; position: relative; min-width: 0; }
+.editor-map { width: 100%; height: 100%; }
+
+.editor-toolbar {
+  position: absolute; left: 12px; bottom: 12px; z-index: 500;
+  background: rgba(255,255,255,0.96); border-radius: 8px; box-shadow: var(--shadow);
+  padding: 8px 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: calc(100% - 24px);
+}
+.editor-toolbar__hint { font-size: 0.76rem; color: var(--color-text-muted); max-width: 340px; }
+
+.editor-sidebar { flex: 0 0 38%; max-width: 520px; overflow-y: auto; border-left: 1px solid var(--color-border); background: var(--color-surface); padding: 14px 18px 60px; }
+.editor-panel { margin-bottom: 22px; }
+.editor-panel h3 { display: flex; align-items: center; gap: 8px; }
+.editor-panel__hint { font-size: 0.8rem; color: var(--color-text-muted); margin: 2px 0 10px; }
+.editor-badge { font-size: 0.72rem; font-weight: 700; background: var(--surface-tint-strong); color: var(--brand-green-dark, #0d5c33); border-radius: 999px; padding: 1px 8px; }
+
+.kpi-row--editor { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+
+.region-list { display: flex; flex-direction: column; gap: 4px; max-height: 260px; overflow-y: auto; }
+.region-row {
+  display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; cursor: pointer;
+  font-size: 0.85rem; border: 1px solid transparent;
+}
+.region-row:hover { background: var(--surface-tint); }
+.region-row--selected { background: var(--surface-tint-strong); border-color: var(--color-primary-light); }
+.region-row__swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.region-row__name { flex: 1; font-weight: 600; color: var(--color-text); }
+.region-row__stat { color: var(--color-text-muted); font-size: 0.78rem; white-space: nowrap; }
+.region-row__unassigned { color: var(--color-text-muted); font-style: italic; }
+
+/* Leaflet-Geoman's own toolbar is fine as-is (top-right by default); just
+   keep it above our layers/tooltips. */
+.leaflet-pm-toolbar { z-index: 600 !important; }

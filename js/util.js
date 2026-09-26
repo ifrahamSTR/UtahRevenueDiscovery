@@ -1,6 +1,16 @@
 /**
- * Formatting + small math helpers shared by map.js and charts.js.
+ * Formatting + small math helpers shared by map.js, charts.js, and
+ * js/region-editor.js.
  */
+// Collapses any property type outside CONFIG.propertyTypeOrder's named list
+// into "Other" -- shared by map.js's filters/Inspect-area panel and
+// charts.js's property-type chart, so a listing always buckets the same way
+// regardless of which page/tool is looking at it.
+function propertyTypeBucket(pt) {
+  const known = CONFIG.propertyTypeOrder.slice(0, -1); // all but "Other"
+  return known.indexOf(pt) !== -1 ? pt : "Other";
+}
+
 function fmtCurrency(n) {
   if (n == null || isNaN(n)) return "—";
   return "$" + Math.round(n).toLocaleString("en-US");

@@ -64,11 +64,6 @@ const FILTERS = {
   ...defaultAmenityFilters(),
 };
 
-function propertyTypeBucket(pt) {
-  const known = CONFIG.propertyTypeOrder.slice(0, -1); // all but "Other"
-  return known.indexOf(pt) !== -1 ? pt : "Other";
-}
-
 function valueFor(listing) {
   return FILTERS.metric === "revA" ? listing.revA : listing.revP;
 }
