@@ -67,25 +67,25 @@
   ],
   "st-george": [
     {
-      "tier": "1–2 BR",
-      "tagline": "The high-desert hideaway",
-      "address": "84 N Sundance Kid Trl, Central, UT 84722",
-      "price": 400000,
-      "beds": 2,
-      "baths": 1,
-      "sqft": 1314,
-      "image": "assets/listings/st-george/central-hideaway.jpg",
-      "imageAlt": "Rustic wood-sided ranch home with a wraparound porch, set alone among junipers with mountain views",
-      "blurb": "Twenty-five minutes from town and a world away from the next driveway — a genuine stand-alone getaway, not a subdivision lot.",
+      "tier": "2–3 BR",
+      "tagline": "The horse-country hideaway",
+      "address": "1206 N Horsemans Park Dr, Dammeron Valley, UT 84783",
+      "price": 659899,
+      "beds": 3,
+      "baths": 2,
+      "sqft": 1743,
+      "image": "assets/listings/st-george/dammeron-valley.jpg",
+      "imageAlt": "Stucco ranch home shaded by a mature tree on an open .64-acre horse property with no neighbors in sight",
+      "blurb": "Real distance from the next house, not just a fence line — .64 acres of quiet horse country a half-hour from St. George.",
       "features": [
-        "Sits in Central, UT, a sparsely populated ranch community — real distance from the nearest neighbor",
-        "Covered deck wraps three full sides of the house",
-        "Fully fenced backyard plus a matching 900 sq ft detached garage",
-        "Updated kitchen with granite counters and glass-front cabinetry"
+        "Sits in Dammeron Valley, a sparsely populated horse-property community — actual open land between neighbors",
+        ".64-acre lot with room for horses, scenic Pine Valley Mountain views",
+        "24' x 36' detached garage/shop plus 30-amp RV parking",
+        "Comfortable single-level layout with an attached 2-car garage"
       ],
-      "hotTub": "The wraparound deck already has the room and the privacy — pick the side facing the mountains, away from the driveway.",
-      "distance": "23 mi from the high-revenue cluster — the furthest of the three, traded for genuine seclusion instead of a fenced-in subdivision yard.",
-      "zillowUrl": "https://www.zillow.com/homedetails/84-N-Sundance-Kid-Trl-Central-UT-84722/68875970_zpid/"
+      "hotTub": "Plenty of open yard away from the house for a soak under genuinely dark, quiet skies — no neighboring patios to overlook it.",
+      "distance": "17.9 mi from the high-revenue cluster — priced and sized up from a typical entry-tier pick, because real acreage and real seclusion in this market cost more than a subdivision lot.",
+      "zillowUrl": "https://www.zillow.com/homedetails/1206-N-Horsemans-Park-Dr-Dammeron-Valley-UT-84783/68886696_zpid/"
     },
     {
       "tier": "3–4 BR",
